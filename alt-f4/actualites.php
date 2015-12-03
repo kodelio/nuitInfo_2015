@@ -161,54 +161,49 @@
 
     			<!-- Main content -->
     			<section class="content">
-
-    				<!-- Default box -->
-    				<div class="box">
-    					<div class="col-md-12">
-    						<!-- Custom Tabs -->
-    						<div class="nav-tabs-custom">
-    							<ul class="nav nav-tabs">
-    								<li class="active"><a href="#tab_1" data-toggle="tab">#MGSU</a></li>
-    								<li><a href="#tab_2" data-toggle="tab">#Urgences</a></li>
-    								<li><a href="#tab_3" data-toggle="tab">#Gestion de crise</a></li>
-    								<li><a href="#tab_4" data-toggle="tab">#Médias sociaux</a></li>
-    								<li><a href="#tab_5" data-toggle="tab">#CrowdHelp</a></li>
-    								<li><a href="#tab_6" data-toggle="tab">#Resilience</a></li>
-    							</ul>
-    							<div class="tab-content">
-    								<div class="tab-pane active" id="tab_1">
-    									<a class="twitter-timeline"  href="https://twitter.com/hashtag/MSGU" data-widget-id="672516645894676480">Tweets sur #MSGU</a>
-    									<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-    								</div><!-- /.tab-pane -->
-    								<div class="tab-pane" id="tab_2">
-    									<a class="twitter-timeline"  href="https://twitter.com/hashtag/Urgences" data-widget-id="672525258637877250">Tweets sur #Urgences</a>
-    									<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-    								</div><!-- /.tab-pane -->
-    								<div class="tab-pane" id="tab_3">
-    									<a class="twitter-timeline"  href="https://twitter.com/search?q=%23Gestion%20de%20crise" data-widget-id="672531602396856321">Tweets sur #Gestion de crise</a>
-    									<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-    								</div><!-- /.tab-pane -->
-    								<div class="tab-pane" id="tab_4">
-    									<a class="twitter-timeline"  href="https://twitter.com/search?q=%23M%C3%A9dias%20sociaux" data-widget-id="672532010498396162">Tweets sur #Médias sociaux</a>
-    									<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-    								</div><!-- /.tab-pane -->
-    								<div class="tab-pane" id="tab_5">
-    									<a class="twitter-timeline"  href="https://twitter.com/hashtag/CrowdHelp" data-widget-id="672532491555741696">Tweets sur #CrowdHelp</a>
-    									<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-    								</div><!-- /.tab-pane -->
-    								<div class="tab-pane" id="tab_6">
-    									<a class="twitter-timeline"  href="https://twitter.com/hashtag/Resilience" data-widget-id="672534301016236032">Tweets sur #Resilience</a>
-    									<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-    								</div><!-- /.tab-pane -->
-    							</div><!-- /.tab-content -->
-    						</div><!-- nav-tabs-custom -->
-    					</div><!-- /.col -->
-    				</div><!-- /.box -->
-
+    				<div class="col-md-12">
+    					<!-- Custom Tabs -->
+    					<div class="nav-tabs-custom">
+    						<ul class="nav nav-tabs">
+    							<li class="active"><a href="#tab_1" data-toggle="tab">#MGSU</a></li>
+    							<li><a href="#tab_2" data-toggle="tab">#Urgences</a></li>
+    							<li><a href="#tab_3" data-toggle="tab">#Gestion de crise</a></li>
+    							<li><a href="#tab_4" data-toggle="tab">#Médias sociaux</a></li>
+    							<li><a href="#tab_5" data-toggle="tab">#CrowdHelp</a></li>
+    							<li><a href="#tab_6" data-toggle="tab">#Resilience</a></li>
+    						</ul>
+    						<div class="tab-content">
+    							<div class="tab-pane active" id="tab_1">
+    								<a class="twitter-timeline"  href="https://twitter.com/hashtag/MSGU" data-widget-id="672516645894676480">Tweets sur #MSGU</a>
+    								<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    							</div><!-- /.tab-pane -->
+    							<div class="tab-pane" id="tab_2">
+    								<a class="twitter-timeline"  href="https://twitter.com/hashtag/Urgences" data-widget-id="672525258637877250">Tweets sur #Urgences</a>
+    								<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    							</div><!-- /.tab-pane -->
+    							<div class="tab-pane" id="tab_3">
+    								<a class="twitter-timeline"  href="https://twitter.com/search?q=%23Gestion%20de%20crise" data-widget-id="672531602396856321">Tweets sur #Gestion de crise</a>
+    								<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    							</div><!-- /.tab-pane -->
+    							<div class="tab-pane" id="tab_4">
+    								<a class="twitter-timeline"  href="https://twitter.com/search?q=%23M%C3%A9dias%20sociaux" data-widget-id="672532010498396162">Tweets sur #Médias sociaux</a>
+    								<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    							</div><!-- /.tab-pane -->
+    							<div class="tab-pane" id="tab_5">
+    								<a class="twitter-timeline"  href="https://twitter.com/hashtag/CrowdHelp" data-widget-id="672532491555741696">Tweets sur #CrowdHelp</a>
+    								<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    							</div><!-- /.tab-pane -->
+    							<div class="tab-pane" id="tab_6">
+    								<a class="twitter-timeline"  href="https://twitter.com/hashtag/Resilience" data-widget-id="672534301016236032">Tweets sur #Resilience</a>
+    								<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    							</div><!-- /.tab-pane -->
+    						</div><!-- /.tab-content -->
+    					</div><!-- nav-tabs-custom -->
+    				</div><!-- /.col -->
     			</section><!-- /.content -->
     		</div><!-- /.content-wrapper -->
     		<footer class="main-footer">
-    			FOOTER
+    			Copyright - Alt-F4 Team - Nuit de l'info 2015
     		</footer>
       <!-- Add the sidebar's background. This div must be placed
       immediately after the control sidebar -->
