@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Jeu 03 Décembre 2015 à 22:36
+-- Généré le :  Jeu 03 Décembre 2015 à 23:16
 -- Version du serveur :  5.6.17
 -- Version de PHP :  5.5.12
 
@@ -19,6 +19,19 @@ SET time_zone = "+00:00";
 --
 -- Base de données :  `gestioncrise_alt-f4`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `asso_chef_crise`
+--
+
+CREATE TABLE IF NOT EXISTS `asso_chef_crise` (
+  `ID_USER` int(11) NOT NULL,
+  `ID_CRISE` int(11) NOT NULL,
+  KEY `ID_USER` (`ID_USER`,`ID_CRISE`),
+  KEY `ID_CRISE` (`ID_CRISE`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -132,27 +145,26 @@ CREATE TABLE IF NOT EXISTS `operation` (
   `ID_USER` int(11) NOT NULL,
   `ID_OPERATION` int(11) NOT NULL AUTO_INCREMENT,
   `NOM` varchar(255) NOT NULL,
-  `ID_CRISE` int(11) NOT NULL,
   PRIMARY KEY (`ID_OPERATION`),
-  KEY `idUser` (`ID_USER`,`ID_CRISE`)
+  KEY `idUser` (`ID_USER`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
 
 --
 -- Contenu de la table `operation`
 --
 
-INSERT INTO `operation` (`ID_USER`, `ID_OPERATION`, `NOM`, `ID_CRISE`) VALUES
-(2, 1, 'A vos planches !', 1),
-(2, 2, 'Sortez vos barbeuc !', 2),
-(2, 3, 'Wait and see', 3),
-(2, 4, 'Tous chez Jawad !', 4),
-(2, 5, 'Quarantaine', 5),
-(2, 6, 'Masque à gaz oblige x)', 6),
-(2, 7, 'Envoyez apolo !', 7),
-(2, 8, 'Grde à vous soldat ! Exterminez moi ces vermines !', 8),
-(2, 9, 'Profitez de vos jours restant', 9),
-(2, 10, 'Prenez vos pistolets laser, la guerre est declare !', 10),
-(2, 11, 'Largage de patate !', 11);
+INSERT INTO `operation` (`ID_USER`, `ID_OPERATION`, `NOM`) VALUES
+(2, 1, 'A vos planches !'),
+(2, 2, 'Sortez vos barbeuc !'),
+(2, 3, 'Wait and see'),
+(2, 4, 'Tous chez Jawad !'),
+(2, 5, 'Quarantaine'),
+(2, 6, 'Masque à gaz oblige x)'),
+(2, 7, 'Envoyez apolo !'),
+(2, 8, 'Grde à vous soldat ! Exterminez moi ces vermines !'),
+(2, 9, 'Profitez de vos jours restant'),
+(2, 10, 'Prenez vos pistolets laser, la guerre est declare !'),
+(2, 11, 'Largage de patate !');
 
 -- --------------------------------------------------------
 
@@ -165,6 +177,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `TYPE_USER` int(11) NOT NULL,
   `LOGIN` varchar(20) NOT NULL,
   `PASSWORD` varchar(20) NOT NULL,
+  `mail` varchar(255) NOT NULL,
   PRIMARY KEY (`ID_USER`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
@@ -172,14 +185,21 @@ CREATE TABLE IF NOT EXISTS `user` (
 -- Contenu de la table `user`
 --
 
-INSERT INTO `user` (`ID_USER`, `TYPE_USER`, `LOGIN`, `PASSWORD`) VALUES
-(1, 1, 'secours', 'secours'),
-(2, 2, 'chef', 'chef'),
-(3, 3, 'admin', 'admin');
+INSERT INTO `user` (`ID_USER`, `TYPE_USER`, `LOGIN`, `PASSWORD`, `mail`) VALUES
+(1, 1, 'secours', 'secours', 'marc-secour@gmail.com'),
+(2, 2, 'chef', 'chef', 'pierre-chefsecour@gmail.com'),
+(3, 3, 'admin', 'admin', 'superadminAltF4@gmail.com');
 
 --
 -- Contraintes pour les tables exportées
 --
+
+--
+-- Contraintes pour la table `asso_chef_crise`
+--
+ALTER TABLE `asso_chef_crise`
+  ADD CONSTRAINT `asso_chef_crise_ibfk_2` FOREIGN KEY (`ID_CRISE`) REFERENCES `crise` (`ID_CRISE`),
+  ADD CONSTRAINT `asso_chef_crise_ibfk_1` FOREIGN KEY (`ID_USER`) REFERENCES `user` (`ID_USER`);
 
 --
 -- Contraintes pour la table `asso_lieu_crise`
