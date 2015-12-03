@@ -35,10 +35,19 @@
 <body>
 <div class="wrapper">
 	<div class="content-wrapper">
+		<!-- Main header -->
 		<section class="content-header">
-			<h1>Premiers Gestes</h1>
+			<h1>
+				Premiers Gestes
+				<small>Test</small>
+			</h1>
+			<ol class="breadcrumb">
+				<li><a href="#">Accueil</a></li>
+				<li class="active">Premiers Gestes</li>
+			</ol>
 		</section>
 		
+		<!-- Boxes -->
 		<section>
 			<div class="row">
 				<!-- Incendie -->
@@ -54,7 +63,7 @@
 						<a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
 					</div>
 				</div>
-				<!-- Tsunamie -->
+				<!-- Tsunamies -->
 				<div class="col-lg-3 col-xs-6">
 					<div class="small-box bg-aqua">
 						<div class="inner">
@@ -67,7 +76,7 @@
 						<a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
 					</div>
 				</div>
-				<!-- Tremblement de terre -->
+				<!-- Séisme -->
 				<div class="col-lg-3 col-xs-6">
 					<div class="small-box bg-green">
 						<div class="inner">
@@ -80,11 +89,11 @@
 						<a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
 					</div>
 				</div>
-				<!-- Abeilles -->
+				<!-- Epidémies -->
 				<div class="col-lg-3 col-xs-6">
 					<div class="small-box bg-yellow">
 						<div class="inner">
-							<h3>Invasion d'abeilles</h3>
+							<h3>Epidémies</h3>
 							<!--<p>New Orders</p>-->
 						</div>
 						<div class="icon">
@@ -93,6 +102,46 @@
 						<a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
 					</div>
 				</div>
+				<!-- Attentats -->
+				<div class="col-lg-3 col-xs-6">
+					<div class="small-box bg-red">
+						<div class="inner">
+							<h3>Attentats</h3>
+							<!--<p>New Orders</p>-->
+						</div>
+						<div class="icon">
+							<i class="ion ion-bag"></i>
+						</div>
+						<a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+					</div>
+				</div>	
+				<!-- Guerre -->
+				<div class="col-lg-3 col-xs-6">
+					<div class="small-box bg-red">
+						<div class="inner">
+							<h3>Guerre</h3>
+							<!--<p>New Orders</p>-->
+						</div>
+						<div class="icon">
+							<i class="ion ion-bag"></i>
+						</div>
+						<a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+					</div>
+				</div>
+				<!-- Radioactivité -->
+				<div class="col-lg-3 col-xs-6">
+					<div class="small-box bg-green">
+						<div class="inner">
+							<h3>Radioactivités</h3>
+							<!--<p>New Orders</p>-->
+						</div>
+						<div class="icon">
+							<i class="ion ion-bag"></i>
+						</div>
+						<a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+					</div>
+				</div>
+				
 			</div>
 		</section>
 	</div>
