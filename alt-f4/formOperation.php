@@ -218,12 +218,12 @@
                   <div class="col-sm-9">
                     <select class="form-control" id="criseOperation" name="criseOperation" required>
                         <?php
-                        $bdd = new PDO('mysql:host=localhost;dbname=rgdyprykza;charset=utf8', 'rgdyprykza', 'rRv2tVZK6P');
-                        $myquery = $bdd->prepare("Select ID_CRISE, NOM from crise;");
-                        $myquery->execute(array());
-                        while($row->fetch()){
-                            ?><option name="CriseID" value="<?php echo $row['ID_CRISE']; ?>"><?php echo $row['NOM']; ?></option>
-                        }
+                            $bdd = new PDO('mysql:host=localhost;dbname=rgdyprykza;charset=utf8', 'rgdyprykza', 'rRv2tVZK6P');
+                            $myquery = $bdd->prepare("Select ID_CRISE, NOM from crise;");
+                            $myquery->execute(array());
+                            while($row->fetch()){?>
+                                <option name="CriseID" value="<?php echo $row['ID_CRISE']; ?>"><?php echo $row['NOM']; ?></option>
+                            <?php }
                         ?>
                     </select>
                   </div>
