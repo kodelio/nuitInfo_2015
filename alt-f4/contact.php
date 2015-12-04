@@ -212,7 +212,7 @@ session_start();
                                             </div>
 
                                             <div class="form-group col-md-12">
-                                                <textarea id="email" class="form-control" rows="5" name="message" placeholder="Entrez votre message"></textarea> 
+                                                <textarea id="message" class="form-control" rows="5" name="message" placeholder="Entrez votre message"></textarea> 
                                             </div>
 
                                             <div class="form-group col-md-1">
@@ -322,8 +322,8 @@ session_start();
 
             </div><!-- /.content-wrapper -->
             <footer class="main-footer">
-             FOOTER
-         </footer>
+               FOOTER
+           </footer>
             <!-- Add the sidebar's background. This div must be placed
             immediately after the control sidebar -->
             <div class="control-sidebar-bg"></div>
