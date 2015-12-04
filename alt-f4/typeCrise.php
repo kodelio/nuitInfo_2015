@@ -7,7 +7,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>AdminLTE 2 | Blank</title>
+	<title>Types de Crises</title>
 	<!-- Tell the browser to be responsive to screen width -->
 	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 	<!-- Bootstrap 3.3.5 -->
@@ -187,7 +187,7 @@
 		<section class="content-header">
 			<h1>
 				Types de Crises
-				<small>Test</small>
+				<small>S'informer sur une catastrophe</small>
 			</h1>
 			<ol class="breadcrumb">
 				<li><a href="#">Accueil</a></li>
