@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -129,26 +133,46 @@
                     <ul class="sidebar-menu">
                         <li class="header">PLAN DU SITE</li>
 
-                        <li><a href="#"><i class="fa fa-globe"></i> <span>Carte des évènements</span></a></li>
-                        <li><a href="#"><i class="fa fa-ambulance"></i> <span>Contacts/Lieux utiles</span></a></li>            
+                        <li><a href="maps.php"><i class="fa fa-globe"></i> <span>Carte des évènements</span></a></li>
+                        <li><a href="contact.php"><i class="fa fa-ambulance"></i> <span>Contacts/Lieux utiles</span></a></li>            
                         <li class="treeview">
                             <a href="#">
                                 <i class="fa fa-graduation-cap"></i> <span>S'informer pour agir</span>
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="#"><i class="fa fa-plus-square"></i>Gestes <br>premiers secours</a></li>
-                                <li><a href="#"><i class="fa fa-lightbulb-o"></i>S'informer sur <br>une catastrophe</a></li>
+                                <li><a href="gesteSecour.php"><i class="fa fa-plus-square"></i>Gestes <br>premiers secours</a></li>
+                                <li><a href="typeCrise.php"><i class="fa fa-lightbulb-o"></i>S'informer sur <br>une catastrophe</a></li>
                             </ul>
                         </li>
-                        <li class="header">ACTIONS</li>
-                        <li><a href="#"><i class="fa fa-plus"></i> <span>Ajouter une crise</span></a></li>
-                        <li><a href="#"><i class="fa fa-plus"></i> <span>Associer chef secours à <br>une crise</span></a></li>
-                        <li><a href="#"><i class="fa fa-plus"></i> <span>Associer secours à <br>une opération</span></a></li>
-                        <li><a href="#"><i class="fa fa-plus"></i> <span>Ajouter une opération</span></a></li>
-
-                        <li><a href="#"><i class="fa fa-binoculars"></i> <span>Voir mes opérations</span></a></li>
-
+                        <?php
+                        if(isset($_SESSION['TYPEUSER']))
+                        {
+                            ?>
+                            <li class="header">ACTIONS</li>
+                            <?php
+                            if ($_SESSION['TYPEUSER'] == 3)
+                            {
+                                ?>
+                                <li><a href="FormCrise.php"><i class="fa fa-plus"></i> <span>Ajouter une crise</span></a></li>
+                                <li><a href="ajoutChefSecour.php"><i class="fa fa-plus"></i> <span>Associer chef secours à <br>une crise</span></a></li>
+                                <?php
+                            }
+                            else if($_SESSION['TYPEUSER'] == 2)
+                            {
+                                ?>
+                                <li><a href="formAssignation.php"><i class="fa fa-plus"></i> <span>Associer secours à <br>une opération</span></a></li>
+                                <li><a href="formOperation.php"><i class="fa fa-plus"></i> <span>Ajouter une opération</span></a></li>
+                                <?php
+                            }
+                            else if($_SESSION['TYPEUSER'] == 1)
+                            {
+                                ?>
+                                <li><a href="operation.php"><i class="fa fa-binoculars"></i> <span>Voir mes opérations</span></a></li>//1
+                                <?php
+                            }
+                        }
+                        ?>
                     </ul>
                 </section>
                 <!-- /.sidebar -->
@@ -174,11 +198,6 @@
                                             </div>
 
                                             <div class="form-group col-md-6">
-                                                <label>Prenom</label>
-                                                <input id="lastName" class="form-control" type="text" name="prenom" placeholder="Entrez votre Prénom">
-                                            </div>
-
-                                            <div class="form-group col-md-6">
                                                 <label>E-mail</label>
                                                 <input id="email" class="form-control" type="email" name="email" placeholder="Entrez votre Email">
                                             </div>
@@ -193,7 +212,7 @@
                                             </div>
 
                                             <div class="form-group col-md-12">
-                                                <textarea id="email" class="form-control" rows="5" name="message" placeholder="Entrez votre message"></textarea> 
+                                                <textarea id="message" class="form-control" rows="5" name="message" placeholder="Entrez votre message"></textarea> 
                                             </div>
 
                                             <div class="form-group col-md-1">
@@ -300,10 +319,8 @@
                         </div>
                     </div>
                 </section><!-- /.content -->
+
             </div><!-- /.content-wrapper -->
-
-
-
             <footer class="main-footer">
                FOOTER
            </footer>

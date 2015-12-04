@@ -1,5 +1,30 @@
 <?php
-    session_start();
+session_start();
+
+if ((isset($_POST['Log'])) AND ($_POST['Log']!="")){
+	$bdd = new PDO('mysql:host=localhost;dbname=rgdyprykza;charset=utf8', 'rgdyprykza', 'rRv2tVZK6P');
+	$myquery = $bdd->prepare("select TYPE_USER, ID_USER from utilisateur where LOGIN=? and PWD=?;");
+	$myquery->execute(array($_POST['Log'],$_POST['PassWord']));
+	$row = $myquery->fetch();
+	if($row['TYPE_USER'] === null) {
+		header("Location: Connexion.php");
+	}else{
+		$_SESSION['TYPEUSER']=$row['TYPE_USER'];
+		$_SESSION['IDUSER']=$row['ID_USER'];
+		header("Location: maps.php");
+		exit();
+	}
+}
+
+if ((isset($_POST['NewLog'])) AND ($_POST['NewLog']!="")){
+	if ((isset($_POST['NewPassword'])) AND ($_POST['NewPassword']!="")){
+		if ((isset($_POST['Mail'])) AND ($_POST['Mail']!="")){
+			$bdd = new PDO('mysql:host=localhost;dbname=rgdyprykza;charset=utf8', 'rgdyprykza', 'rRv2tVZK6P');
+			$myquery = $bdd->prepare("INSERT INTO utilisateur (TYPE_USER,LOGIN,PWD,MAIL) VALUES (?,?,?,?)");
+			$myquery->execute(array($_POST['type'],$_POST['NewLog'],$_POST['NewPassword'],$_POST['Mail']));  
+		}
+	}
+}
 ?>
 
 <!DOCTYPE html>
@@ -145,34 +170,34 @@
     							<li><a href="typeCrise.php"><i class="fa fa-lightbulb-o"></i>S'informer sur <br>une catastrophe</a></li>
     						</ul>
     					</li>
-                        <?php
-                            if(isset($_SESSION['TYPEUSER']))
-                            {
-                        ?>
-    					       <li class="header">ACTIONS</li>
-                                <?php
-                                    if ($_SESSION['TYPEUSER'] == 3)
-                                    {
-                                ?>
-                    					<li><a href="FormCrise.php"><i class="fa fa-plus"></i> <span>Ajouter une crise</span></a></li>
-                    					<li><a href="ajoutChefSecour.php"><i class="fa fa-plus"></i> <span>Associer chef secours à <br>une crise</span></a></li>
-                                <?php
-                                    }
-                                    else if($_SESSION['TYPEUSER'] == 2)
-                                    {
-                                ?>
-                    					<li><a href="formAssignation.php"><i class="fa fa-plus"></i> <span>Associer secours à <br>une opération</span></a></li>
-                    					<li><a href="formOperation.php"><i class="fa fa-plus"></i> <span>Ajouter une opération</span></a></li>
-                                <?php
-                                    }
-                                    else if($_SESSION['TYPEUSER'] == 1)
-                                    {
-                                ?>
-    					                <li><a href="operation.php"><i class="fa fa-binoculars"></i> <span>Voir mes opérations</span></a></li>//1
-                        <?php
-                                    }
-                            }
-                        ?>
+    					<?php
+    					if(isset($_SESSION['TYPEUSER']))
+    					{
+    						?>
+    						<li class="header">ACTIONS</li>
+    						<?php
+    						if ($_SESSION['TYPEUSER'] == 3)
+    						{
+    							?>
+    							<li><a href="FormCrise.php"><i class="fa fa-plus"></i> <span>Ajouter une crise</span></a></li>
+    							<li><a href="ajoutChefSecour.php"><i class="fa fa-plus"></i> <span>Associer chef secours à <br>une crise</span></a></li>
+    							<?php
+    						}
+    						else if($_SESSION['TYPEUSER'] == 2)
+    						{
+    							?>
+    							<li><a href="formAssignation.php"><i class="fa fa-plus"></i> <span>Associer secours à <br>une opération</span></a></li>
+    							<li><a href="formOperation.php"><i class="fa fa-plus"></i> <span>Ajouter une opération</span></a></li>
+    							<?php
+    						}
+    						else if($_SESSION['TYPEUSER'] == 1)
+    						{
+    							?>
+    							<li><a href="operation.php"><i class="fa fa-binoculars"></i> <span>Voir mes opérations</span></a></li>//1
+    							<?php
+    						}
+    					}
+    					?>
     				</ul>
     			</section>
     			<!-- /.sidebar -->
@@ -185,31 +210,51 @@
 
     			<!-- Main content -->
     			<section class="content">
-
-
-
-
-
-
-    				<!-- Default box -->
-    				<div class="box">
-    					<div class="box-header with-border">
-                            <h3 class="box-title">Title</h3>
-                        </div><!-- /.box-footer-->
-                    </div><!-- /.box -->
-
-
-
-
-
-
-
-
-                </section><!-- /.content -->
-            </div><!-- /.content-wrapper -->
-            <footer class="main-footer">
-               FOOTER
-            </footer>
+    				<div class="box box-default">
+    					<form role="form" method="POST">
+    						<div class="box-header">
+    							Connexion
+    						</div>
+    						<div class="box-body">
+    							<div class="form-group">
+    								<input type="text" class="form-control" name="Log" placeholder="Login ">
+    							</div>
+    							<div class="form-group">
+    								<input type="password" class="form-control" name="PassWord" placeholder="Password">
+    							</div>
+    							<div class="box-footer">
+    								<button type="submit" class="btn btn-default pull-right">Valider</button>
+    							</div>
+    						</div>
+    					</form>
+    				</div>
+    				<div class="box box-default">
+    					<form method="post" action="Connexion.php">
+    						<div class="box-header">
+    							Ajouter un utilisateur
+    						</div>
+    						<div class="box-body">
+    							<div class="form-group">
+    								<input type="text" class="form-control" name="NewLog" placeholder="Login ">
+    							</div>
+    							<div class="form-group">
+    								<input type="password" class="form-control" name="NewPassword" placeholder="Password">
+    							</div>
+    							<div class="form-group">
+    								<input type="email" class="form-control" name="Mail" placeholder="Mail">
+    							</div>
+    							<fieldset> 
+    								<input type="radio" id="mc" name="type" value="1" checked><label for="mc"> Employé</label>
+    								<input type="radio" id="vi" name="type" value="2"><label for="vi">Chef Employé</label>
+    							</fieldset>
+    						</div>
+    						<div class="box-footer">
+    							<button type="submit" class="btn btn-primary pull-right">Save changes</button>
+    						</div>
+    					</form>
+    				</div>
+    			</section>
+    		</div><!-- /.content-wrapper -->
             <!-- Add the sidebar's background. This div must be placed
             immediately after the control sidebar -->
             <div class="control-sidebar-bg"></div>
@@ -228,4 +273,4 @@
         <!-- AdminLTE for demo purposes -->
         <script src="dist/js/demo.js"></script>
     </body>
-</html>
+    </html>

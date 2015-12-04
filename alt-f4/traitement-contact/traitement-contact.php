@@ -1,62 +1,22 @@
 <?php
 
-$nom = $_POST['nom'];
-$prenom = $_POST['prenom'];
-$email = $_POST['email'];
-$contenu = $_POST['message'];
-$ONG =  $_POST['ONG']; 
-if (!preg_match("#^[a-z0-9._-]+@(hotmail|live|msn).[a-z]{2,4}$#", $ONG)) // Différents passsages de lignes si hotmail,live ou msn (sinon bug)
-{
-	$passage_ligne = "\r\n";
+if(isset($_POST) && isset($_POST['nom']) && isset($_POST['email']) && isset($_POST['message'])){
+	if(!empty($_POST['nom']) && !empty($_POST['email']) && !empty($_POST['message'])){
+		$to =  $_POST['ONG'];
+		$subject = "Contact par mail via l'application Alt-F4";
+		$message = "Envoi pour : ".$_POST['ONG']."\n\nNom : ".$_POST['nom']."\n\nAdresse email : ".$_POST['email']."\n\nMessage :\n ".$_POST['message']."\n";
+		$message = wordwrap($message, 70);
+		$headers = 'From: '.$_POST['email']."\n".
+		'Reply-To: '.$_POST['email']."\n".
+		'X-Mailer: PHP/'.phpversion();
+
+		if (mail($to, $subject, $message, $headers)){
+			header("Location: ../mail_envoye.php");
+		} 
+		else {
+			header("Location: ../mail_erreur.php");
+		}
+	}
 }
-else
-{
-	$passage_ligne = "\n";
-}
-//Définition du contenu HTML et Texte
-$message_txt = "NOUVEAU CONTACT--> Nom :".$nom."  Prenom: ".$prenom."  Email: ".$email." Message : ".$contenu;
-include('./traitement_contenu.php');
-$message_html = $contenu;
-//==========
 
-//==BOUNDARY==
-$boundary = "-----=".md5(rand());
-//============
-
-//==SUJET==
-$sujet = "Contact ".$nom." ".$prenom;
-//=========
-
-//==HEADER==
-$header = "From: Site web <reply@test.fr>".$passage_ligne;
-$header.= "Reply-to: Site web <reply@test.fr>".$passage_ligne;
-$header.= "MIME-Version: 1.0".$passage_ligne;
-$header.= "Content-Type: multipart/alternative;".$passage_ligne." boundary=\"$boundary\"".$passage_ligne;
-//==========
-
-//=====Création du message.
-$message = $passage_ligne."--".$boundary.$passage_ligne;
-//=====MESSAGE TEXTE
-$message.= "Content-Type: text/plain; charset=\"ISO-8859-1\"".$passage_ligne;
-$message.= "Content-Transfer-Encoding: 8bit".$passage_ligne;
-$message.= $passage_ligne.$message_txt.$passage_ligne;
-//==========
-$message.= $passage_ligne."--".$boundary.$passage_ligne;
-//=====MESSAGE HTML
-$message.= "Content-Type: text/html; charset=\"ISO-8859-1\"".$passage_ligne;
-$message.= "Content-Transfer-Encoding: 8bit".$passage_ligne;
-$message.= $passage_ligne.$message_html.$passage_ligne;
-//==========
-$message.= $passage_ligne."--".$boundary."--".$passage_ligne;
-$message.= $passage_ligne."--".$boundary."--".$passage_ligne;
-//==========
-
-//=====Envoi de l'e-mail et vérification.
-if(mail($ONG,$sujet,$message,$header))
-{
-	$redir = "../mail_envoye";
-	header("Location: ".$redir.".php");
-}
-else echo "Erreur : ".$mail;
-//==========
 ?>

@@ -7,7 +7,7 @@ session_start();
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>AdminLTE 2 | Mail Envoyé</title>
+    <title>AdminLTE 2 | Mail Erreur</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.5 -->
@@ -185,14 +185,14 @@ session_start();
 
                 <!-- Main content -->
                 <section class="content">
-                    <h1>Le mail a bien été envoyé !</h1>
+                    <h1>Une erreur est survenue dans l'envoi de l'email !</h1>
                     <META http-equiv="refresh" content="3; URL=contact.php">
                     </section><!-- /.content -->
 
                 </div><!-- /.content-wrapper -->
                 <footer class="main-footer">
-                 FOOTER
-             </footer>
+                   FOOTER
+               </footer>
             <!-- Add the sidebar's background. This div must be placed
             immediately after the control sidebar -->
             <div class="control-sidebar-bg"></div>
