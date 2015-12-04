@@ -198,17 +198,18 @@
 		<!-- Boxes -->
 		<section class="content">
 			<div class="row">
+			
+				<div style="">
 				<!-- Incendie -->
 				<div class="col-lg-4 col-md-6 col-xs-12">
 					<div class="box box-default collapsed-box">
 						<div class="small-box bg-red">
 							<div class="inner">
 								<h3>Incendies</h3>
-								<!-- <p>Brève description bla bla bla ta gueule.</p> -->
 							</div>
-							<!-- <div class="icon">
-								<i class="ion ion-bag"></i>
-							</div> -->
+							<div class="icon">
+								<i class="fa fa-fire"></i>
+							</div>
 							<button class="small-box-footer btn" data-widget="collapse"><i class="fa fa-plus"></i> Plus d'info</button>
 						</div>
 						<div class="box-body">
@@ -226,11 +227,10 @@
 						<div class="small-box bg-aqua">
 							<div class="inner">
 								<h3>Tsunamies</h3>
-								<!-- <p>Brève description bla bla bla ta gueule.</p> -->
 							</div>
-							<!-- <div class="icon">
-								<i class="ion ion-bag"></i>
-							</div> -->
+							<div class="icon">
+								<i class="fa fa-tint"></i>
+							</div>
 							<button class="small-box-footer btn" data-widget="collapse"><i class="fa fa-plus"></i> Plus d'info</button>
 						</div>
 						<div class="box-body">
@@ -248,11 +248,10 @@
 						<div class="small-box bg-green">
 							<div class="inner">
 								<h3>Séisme</h3>
-								<!-- <p>Brève description bla bla bla ta gueule.</p> -->
 							</div>
-							<!-- <div class="icon">
-								<i class="ion ion-bag"></i>
-							</div> -->
+							<div class="icon">
+								<i class="fa fa-warning"></i>
+							</div>
 							<button class="small-box-footer btn" data-widget="collapse"><i class="fa fa-plus"></i> Plus d'info</button>
 						</div>
 						<div class="box-body">
@@ -264,17 +263,18 @@
 						</div>
 					</div>
 				</div>
+				</div>
+				<div>
 				<!-- Epidémies -->
 				<div class="col-lg-4 col-md-6 col-xs-12">
 					<div class="box box-default collapsed-box">
 						<div class="small-box bg-yellow">
 							<div class="inner">
 								<h3>Epidémies</h3>
-								<!-- <p>Brève description bla bla bla ta gueule.</p> -->
 							</div>
-							<!-- <div class="icon">
-								<i class="ion ion-bag"></i>
-							</div> -->
+							<div class="icon">
+								<i class="fa fa-warning"></i>
+							</div>
 							<button class="small-box-footer btn" data-widget="collapse"><i class="fa fa-plus"></i> Plus d'info</button>
 						</div>
 						<div class="box-body">
@@ -292,11 +292,10 @@
 						<div class="small-box bg-red">
 							<div class="inner">
 								<h3>Attentats</h3>
-								<!-- <p>Brève description bla bla bla ta gueule.</p> -->
 							</div>
-							<!-- <div class="icon">
-								<i class="ion ion-bag"></i>
-							</div> -->
+							<div class="icon">
+								<i class="fa fa-bomb"></i>
+							</div>
 							<button class="small-box-footer btn" data-widget="collapse"><i class="fa fa-plus"></i> Plus d'info</button>
 						</div>
 						<div class="box-body">
@@ -308,17 +307,18 @@
 						</div>
 					</div>
 				</div>	
+				</div>
+				<div>
 				<!-- Guerre -->
 				<div class="col-lg-4 col-md-6 col-xs-12">
 					<div class="box box-default collapsed-box">
 						<div class="small-box bg-yellow">
 							<div class="inner">
 								<h3>Guerre</h3>
-								<!-- <p>Brève description bla bla bla ta gueule.</p> -->
 							</div>
-							<!-- <div class="icon">
-								<i class="ion ion-bag"></i>
-							</div> -->
+							<div class="icon">
+								<i class="fa fa-bomb"></i>
+							</div>
 							<button class="small-box-footer btn" data-widget="collapse"><i class="fa fa-plus"></i> Plus d'info</button>
 						</div>
 						<div class="box-body">
@@ -336,11 +336,10 @@
 						<div class="small-box bg-green">
 							<div class="inner">
 								<h3>Radioactivité</h3>
-								<!-- <p>Brève description bla bla bla ta gueule.</p> -->
 							</div>
-							<!-- <div class="icon">
-								<i class="ion ion-bag"></i>
-							</div> -->
+							<div class="icon">
+								<i class="fa fa-warning"></i>
+							</div>
 							<button class="small-box-footer btn" data-widget="collapse"><i class="fa fa-plus"></i> Plus d'info</button>
 						</div>
 						<div class="box-body">
@@ -351,6 +350,7 @@
 							<p>The body of the box</p>
 						</div>
 					</div>
+				</div>
 				</div>
 				
 			</div>
