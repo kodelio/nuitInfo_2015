@@ -16,7 +16,7 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8 */;
 
-CREATE DATABASE gestioncrise_alt_f4;
+CREATE DATABASE rgdyprykza;
 
 --
 -- Base de données :  `gestioncrise_alt-f4`
@@ -28,7 +28,7 @@ CREATE DATABASE gestioncrise_alt_f4;
 -- Structure de la table `asso_chef_crise`
 --
 
-CREATE TABLE IF NOT EXISTS gestioncrise_alt_f4.`asso_chef_crise` (
+CREATE TABLE IF NOT EXISTS rgdyprykza.`asso_chef_crise` (
   `ID_USER` int(11) NOT NULL,
   `ID_CRISE` int(11) NOT NULL,
   KEY `ID_USER` (`ID_USER`,`ID_CRISE`),
@@ -41,7 +41,7 @@ CREATE TABLE IF NOT EXISTS gestioncrise_alt_f4.`asso_chef_crise` (
 -- Structure de la table `asso_lieu_crise`
 --
 
-CREATE TABLE IF NOT EXISTS gestioncrise_alt_f4.`asso_lieu_crise` (
+CREATE TABLE IF NOT EXISTS rgdyprykza.`asso_lieu_crise` (
   `ID_CRISE` int(11) NOT NULL,
   `ID_LIEU` int(11) NOT NULL,
   KEY `ID_CRISE` (`ID_CRISE`,`ID_LIEU`),
@@ -54,7 +54,7 @@ CREATE TABLE IF NOT EXISTS gestioncrise_alt_f4.`asso_lieu_crise` (
 -- Structure de la table `asso_operation_crise`
 --
 
-CREATE TABLE IF NOT EXISTS gestioncrise_alt_f4.`asso_operation_crise` (
+CREATE TABLE IF NOT EXISTS rgdyprykza.`asso_operation_crise` (
   `ID_CRISE` int(11) NOT NULL,
   `ID_OPERATION` int(11) NOT NULL,
   KEY `idCrise` (`ID_CRISE`,`ID_OPERATION`),
@@ -67,7 +67,7 @@ CREATE TABLE IF NOT EXISTS gestioncrise_alt_f4.`asso_operation_crise` (
 -- Structure de la table `asso_user_op`
 --
 
-CREATE TABLE IF NOT EXISTS gestioncrise_alt_f4.`asso_user_op` (
+CREATE TABLE IF NOT EXISTS rgdyprykza.`asso_user_op` (
   `ID_USER` int(11) NOT NULL,
   `ID_OPERATION` int(11) NOT NULL,
   KEY `ID_USER` (`ID_USER`,`ID_OPERATION`),
@@ -80,7 +80,7 @@ CREATE TABLE IF NOT EXISTS gestioncrise_alt_f4.`asso_user_op` (
 -- Structure de la table `crise`
 --
 
-CREATE TABLE IF NOT EXISTS gestioncrise_alt_f4.`crise` (
+CREATE TABLE IF NOT EXISTS rgdyprykza.`crise` (
   `ID_CRISE` int(11) NOT NULL AUTO_INCREMENT,
   `NOM` varchar(255) NOT NULL,
   `DESCRIPTION` varchar(255) NOT NULL,
@@ -96,18 +96,18 @@ CREATE TABLE IF NOT EXISTS gestioncrise_alt_f4.`crise` (
 -- Contenu de la table `crise`
 --
 
-INSERT INTO gestioncrise_alt_f4.`crise` (`ID_CRISE`, `NOM`, `DESCRIPTION`, `DATE_DEB`, `DATE_FIN`, `LOCALISATION_X`, `LOCALISATION_Y`, `DESC_ZONE`) VALUES
+INSERT INTO rgdyprykza.`crise` (`ID_CRISE`, `NOM`, `DESCRIPTION`, `DATE_DEB`, `DATE_FIN`, `LOCALISATION_X`, `LOCALISATION_Y`, `DESC_ZONE`) VALUES
 (1, 'Tsunami', 'Une mega vague approche !', '2015-12-04', '2015-12-05', 900, 450, 'Ocean du Japon -_-'),
 (2, 'Incendie', 'Jaina invoque CHOC DE FLAMME !', '2015-12-20', '2015-12-21', 200, 500, 'Foret tropicale'),
 (3, 'Seisme', 'Ca va vibrer !', '2015-12-15', '2015-12-15', 900, 500, 'Japan again :'')'),
 (4, 'Terrorisme', 'No comment :/ Pray For Paris', '2015-11-13', '2015-11-13', 500, 600, 'Paris :''('),
-(5, 'Epidemie', 'Atchoum ! :s', '2016-01-01', '2016-12-31', 550, 600, 'Syrie'),
-(6, 'Radioactivite', 'Explosion de reacteurs nucleaires !', '1986-04-26', '1986-04-26', 550, 650, 'Tchernobyl'),
-(7, 'Chute d''asteroide', 'Un caillou de 200km de diametre approche ! :o', '2016-06-21', '2016-06-21', 100, 500, 'Ocean atlantic'),
-(8, 'Guerre', 'Pan-pan ! tulut-tulut ! BOOM ! Terrorist dead by Poutin, Obama and Hollande.', '2015-11-13', NULL, 600, 500, 'Syrie'),
-(9, 'Fin du monde', 'Bon bah... Profitez bien de vos dernier jours ! RIP WORLD.', '2050-12-25', NULL, 500, 500, 'Planete'),
-(10, 'Invasion d''alien', 'E.T, Destroy planet !', '2016-03-10', NULL, 250, 600, 'USA, NY'),
-(11, 'Famine', 'Y''a plus de bouffe les mecs !', '2025-01-01', NULL, 550, 400, 'Afrique');
+  (5, 'Epidemie', 'Atchoum ! :s', '2016-01-01', '2016-12-31', 550, 600, 'Syrie'),
+  (6, 'Radioactivite', 'Explosion de reacteurs nucleaires !', '1986-04-26', '1986-04-26', 550, 650, 'Tchernobyl'),
+  (7, 'Chute d''asteroide', 'Un caillou de 200km de diametre approche ! :o', '2016-06-21', '2016-06-21', 100, 500, 'Ocean atlantic'),
+  (8, 'Guerre', 'Pan-pan ! tulut-tulut ! BOOM ! Terrorist dead by Poutin, Obama and Hollande.', '2015-11-13', NULL, 600, 500, 'Syrie'),
+  (9, 'Fin du monde', 'Bon bah... Profitez bien de vos dernier jours ! RIP WORLD.', '2050-12-25', NULL, 500, 500, 'Planete'),
+  (10, 'Invasion d''alien', 'E.T, Destroy planet !', '2016-03-10', NULL, 250, 600, 'USA, NY'),
+  (11, 'Famine', 'Y''a plus de bouffe les mecs !', '2025-01-01', NULL, 550, 400, 'Afrique');
 
 -- --------------------------------------------------------
 
@@ -115,7 +115,7 @@ INSERT INTO gestioncrise_alt_f4.`crise` (`ID_CRISE`, `NOM`, `DESCRIPTION`, `DATE
 -- Structure de la table `lieu`
 --
 
-CREATE TABLE IF NOT EXISTS gestioncrise_alt_f4.`lieu` (
+CREATE TABLE IF NOT EXISTS rgdyprykza.`lieu` (
   `ID_LIEU` int(11) NOT NULL AUTO_INCREMENT,
   `NOM` varchar(255) NOT NULL,
   `TYPE` varchar(255) NOT NULL,
@@ -129,7 +129,7 @@ CREATE TABLE IF NOT EXISTS gestioncrise_alt_f4.`lieu` (
 -- Contenu de la table `lieu`
 --
 
-INSERT INTO gestioncrise_alt_f4.`lieu` (`ID_LIEU`, `NOM`, `TYPE`, `DESCRIPTION`, `VILLE`, `PAYS`) VALUES
+INSERT INTO rgdyprykza.`lieu` (`ID_LIEU`, `NOM`, `TYPE`, `DESCRIPTION`, `VILLE`, `PAYS`) VALUES
 (1, 'Hopital Pasteur', 'Hopital', NULL, 'Nice', 'France'),
 (2, 'Centre pompidou', 'Centre medical', NULL, 'Paris', 'France'),
 (3, 'Pharmacie CAP-3000', 'Pharmacie', 'Sans ordonnance !', 'Saint-Laurent', 'France'),
@@ -143,7 +143,7 @@ INSERT INTO gestioncrise_alt_f4.`lieu` (`ID_LIEU`, `NOM`, `TYPE`, `DESCRIPTION`,
 -- Structure de la table `operation`
 --
 
-CREATE TABLE IF NOT EXISTS gestioncrise_alt_f4.`operation` (
+CREATE TABLE IF NOT EXISTS rgdyprykza.`operation` (
   `ID_USER` int(11) NOT NULL,
   `ID_OPERATION` int(11) NOT NULL AUTO_INCREMENT,
   `NOM` varchar(255) NOT NULL,
@@ -155,7 +155,7 @@ CREATE TABLE IF NOT EXISTS gestioncrise_alt_f4.`operation` (
 -- Contenu de la table `operation`
 --
 
-INSERT INTO gestioncrise_alt_f4.`operation` (`ID_USER`, `ID_OPERATION`, `NOM`) VALUES
+INSERT INTO rgdyprykza.`operation` (`ID_USER`, `ID_OPERATION`, `NOM`) VALUES
 (2, 1, 'A vos planches !'),
 (2, 2, 'Sortez vos barbeuc !'),
 (2, 3, 'Wait and see'),
@@ -174,7 +174,7 @@ INSERT INTO gestioncrise_alt_f4.`operation` (`ID_USER`, `ID_OPERATION`, `NOM`) V
 -- Structure de la table `utilisateur`
 --
 
-CREATE TABLE IF NOT EXISTS gestioncrise_alt_f4.`utilisateur` (
+CREATE TABLE IF NOT EXISTS rgdyprykza.`utilisateur` (
   `ID_USER` int(11) NOT NULL AUTO_INCREMENT,
   `TYPE_USER` int(11) NOT NULL,
   `LOGIN` varchar(20) NOT NULL,
@@ -187,7 +187,7 @@ CREATE TABLE IF NOT EXISTS gestioncrise_alt_f4.`utilisateur` (
 -- Contenu de la table `utilisateur`
 --
 
-INSERT INTO gestioncrise_alt_f4.`utilisateur` (`ID_USER`, `TYPE_USER`, `LOGIN`, `PWD`, `mail`) VALUES
+INSERT INTO rgdyprykza.`utilisateur` (`ID_USER`, `TYPE_USER`, `LOGIN`, `PWD`, `mail`) VALUES
 (1, 1, 'secours', 'secours', 'marc-secour@gmail.com'),
 (2, 2, 'chef', 'chef', 'pierre-chefsecour@gmail.com'),
 (3, 3, 'admin', 'admin', 'superadminAltF4@gmail.com');
@@ -199,36 +199,36 @@ INSERT INTO gestioncrise_alt_f4.`utilisateur` (`ID_USER`, `TYPE_USER`, `LOGIN`, 
 --
 -- Contraintes pour la table `asso_chef_crise`
 --
-ALTER TABLE gestioncrise_alt_f4.`asso_chef_crise`
-  ADD CONSTRAINT `asso_chef_crise_ibfk_2` FOREIGN KEY (`ID_CRISE`) REFERENCES `crise` (`ID_CRISE`),
-  ADD CONSTRAINT `asso_chef_crise_ibfk_1` FOREIGN KEY (`ID_USER`) REFERENCES `utilisateur` (`ID_USER`);
+ALTER TABLE rgdyprykza.`asso_chef_crise`
+ADD CONSTRAINT `asso_chef_crise_ibfk_2` FOREIGN KEY (`ID_CRISE`) REFERENCES `crise` (`ID_CRISE`),
+ADD CONSTRAINT `asso_chef_crise_ibfk_1` FOREIGN KEY (`ID_USER`) REFERENCES `utilisateur` (`ID_USER`);
 
 --
 -- Contraintes pour la table `asso_lieu_crise`
 --
-ALTER TABLE gestioncrise_alt_f4.`asso_lieu_crise`
-  ADD CONSTRAINT `asso_lieu_crise_ibfk_2` FOREIGN KEY (`ID_LIEU`) REFERENCES `lieu` (`ID_LIEU`),
-  ADD CONSTRAINT `asso_lieu_crise_ibfk_1` FOREIGN KEY (`ID_CRISE`) REFERENCES `crise` (`ID_CRISE`);
+ALTER TABLE rgdyprykza.`asso_lieu_crise`
+ADD CONSTRAINT `asso_lieu_crise_ibfk_2` FOREIGN KEY (`ID_LIEU`) REFERENCES `lieu` (`ID_LIEU`),
+ADD CONSTRAINT `asso_lieu_crise_ibfk_1` FOREIGN KEY (`ID_CRISE`) REFERENCES `crise` (`ID_CRISE`);
 
 --
 -- Contraintes pour la table `asso_operation_crise`
 --
-ALTER TABLE gestioncrise_alt_f4.`asso_operation_crise`
-  ADD CONSTRAINT `asso_operation_crise_ibfk_2` FOREIGN KEY (`ID_OPERATION`) REFERENCES `operation` (`ID_OPERATION`),
-  ADD CONSTRAINT `asso_operation_crise_ibfk_1` FOREIGN KEY (`ID_CRISE`) REFERENCES `crise` (`ID_CRISE`);
+ALTER TABLE rgdyprykza.`asso_operation_crise`
+ADD CONSTRAINT `asso_operation_crise_ibfk_2` FOREIGN KEY (`ID_OPERATION`) REFERENCES `operation` (`ID_OPERATION`),
+ADD CONSTRAINT `asso_operation_crise_ibfk_1` FOREIGN KEY (`ID_CRISE`) REFERENCES `crise` (`ID_CRISE`);
 
 --
 -- Contraintes pour la table `asso_user_op`
 --
-ALTER TABLE gestioncrise_alt_f4.`asso_user_op`
-  ADD CONSTRAINT `asso_user_op_ibfk_2` FOREIGN KEY (`ID_OPERATION`) REFERENCES `operation` (`ID_OPERATION`),
-  ADD CONSTRAINT `asso_user_op_ibfk_1` FOREIGN KEY (`ID_USER`) REFERENCES `utilisateur` (`ID_USER`);
+ALTER TABLE rgdyprykza.`asso_user_op`
+ADD CONSTRAINT `asso_user_op_ibfk_2` FOREIGN KEY (`ID_OPERATION`) REFERENCES `operation` (`ID_OPERATION`),
+ADD CONSTRAINT `asso_user_op_ibfk_1` FOREIGN KEY (`ID_USER`) REFERENCES `utilisateur` (`ID_USER`);
 
 --
 -- Contraintes pour la table `operation`
 --
-ALTER TABLE gestioncrise_alt_f4.`operation`
-  ADD CONSTRAINT `operation_ibfk_1` FOREIGN KEY (`ID_USER`) REFERENCES `utilisateur` (`ID_USER`);
+ALTER TABLE rgdyprykza.`operation`
+ADD CONSTRAINT `operation_ibfk_1` FOREIGN KEY (`ID_USER`) REFERENCES `utilisateur` (`ID_USER`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
