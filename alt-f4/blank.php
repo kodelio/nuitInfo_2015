@@ -96,7 +96,7 @@ session_start();
 <!-- sidebar menu: : style can be found in sidebar.less -->
 <ul class="sidebar-menu">
  <li class="header">PLAN DU SITE</li>
-
+ <li><a href="Connexion.php"><i class="fa fa-lock"></i> <span>Connexion</span></a></li>
  <li><a href="index.php"><i class="fa fa-globe"></i> <span>Carte des évènements</span></a></li>
  <li><a href="contact.php"><i class="fa fa-ambulance"></i> <span>Contacts/Lieux utiles</span></a></li>            
  <li class="treeview">
