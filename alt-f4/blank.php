@@ -128,6 +128,7 @@ if(isset($_SESSION['TYPEUSER']))
     ?>
     <li><a href="formAssignation.php"><i class="fa fa-plus"></i> <span>Associer secours à <br>une opération</span></a></li>
     <li><a href="formOperation.php"><i class="fa fa-plus"></i> <span>Ajouter une opération</span></a></li>
+    <li><a href="formChefEmploye.php"><i class="fa fa-plus"></i> <span>Ajouter un employé <br>à ma liste</span></a></li>
     <?php
   }
   else if($_SESSION['TYPEUSER'] == 1)
