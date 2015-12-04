@@ -3,6 +3,43 @@
 
     if(isset($_SESSION['TYPEUSER']) && $_SESSION['TYPEUSER'] == 3)
     {
+        $bdd = new PDO('mysql:host=localhost;dbname=rgdyprykza;charset=utf8', 'root', '');
+        $myquery = $bdd->prepare("SELECT NOM, ID_CRISE FROM crise;");
+        $myquery->execute(array());
+        $crise = array();
+        while($row = $myquery->fetch())
+        {
+            $crise[$row['ID_CRISE']] = $row['NOM'];
+        }
+
+        $myquery = null;
+
+        $myquery = $bdd->prepare("SELECT LOGIN, ID_USER FROM utilisateur WHERE TYPE_USER=2;");
+        $myquery->execute(array());
+        $chefUser = array();
+        while($row = $myquery->fetch())
+        {
+            $chefUser[$row['ID_USER']] = $row['LOGIN'];
+        }
+
+        $myquery = null;
+        $ajout = 0;
+
+        if(isset($_POST['ajoutChef']))
+        {
+            $chef = $_POST['ajoutChef'];
+            $myCrise = $_POST['criseChef'];
+            $myquery = $bdd->prepare("SELECT ID_USER, ID_CRISE FROM asso_chef_crise WHERE ID_USER='$chef' AND ID_CRISE='$myCrise'");
+            $row = $myquery->fetch();
+            if($row['ID_USER'] === null) 
+            {
+              $myquery = $bdd->prepare("INSERT INTO asso_chef_crise(ID_USER, ID_CRISE) VALUES (?,?);");
+              $myquery->execute(array($chef,$myCrise));
+              $ajout = 1;
+            }
+            else
+              $ajout = 2;
+        }
 ?>
 
 <!DOCTYPE html>
@@ -193,6 +230,24 @@
                     <div class="box-header with-border">
                       <h3 class="box-title">Ajouter une opération</h3>
                     </div><!-- /.box-header -->
+                    <?php
+                      if($ajout == 2)
+                      {
+                         echo '<div class="form-group has-success has-feedback" id="inputError2Status" aria-describedby="inputError2Status">
+                            <label class="control-label" for="inputError2Status">Le cheft est déjà assigné à cette crise</label>
+                            <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+                            <span id="inputError2Status" class="sr-only">(error)</span>
+                          </div>';
+                      }
+                      else if($ajout == 1)
+                      {
+                          echo '<div class="form-group has-success has-feedback" id="inputSuccess2" aria-describedby="inputSuccess2Status">
+                            <label class="control-label" for="inputSuccess2">Le cheft a été ajouté à la crise</label>
+                            <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+                            <span id="inputSuccess2Status" class="sr-only">(success)</span>
+                          </div>';
+                      }
+                    ?>
                     <!-- form start -->
                     <form class="form-horizontal" method="POST" action="">
                       <div class="box-body">
@@ -200,11 +255,12 @@
                         <label for="ajoutChef" class="col-sm-2 control-label">Ajout du chef de secour</label>
                           <div class="col-sm-9">
                             <select class="form-control" id="ajoutChef" name="ajoutChef" required>
-                              <option>option 1</option>
-                              <option>option 2</option>
-                              <option>option 3</option>
-                              <option>option 4</option>
-                              <option>option 5</option>
+                              <option>Séléctioner un chef</option>
+                              <?php
+                                foreach ($chefUser as $key => $value) {
+                                  echo "<option value='$key'>$value</option>";
+                                }
+                              ?>
                             </select>
                           </div>
                         </div>
@@ -212,11 +268,12 @@
                           <label for="criseChef" class="col-sm-2 control-label">Crise</label>
                           <div class="col-sm-9">
                             <select class="form-control" id="criseChef" name="criseChef" required>
-                              <option>option 1</option>
-                              <option>option 2</option>
-                              <option>option 3</option>
-                              <option>option 4</option>
-                              <option>option 5</option>
+                               <option>Séléctioner une crise</option>
+                              <?php
+                                foreach ($crise as $key => $value) {
+                                  echo "<option value='$key'>$value</option>";
+                                }
+                              ?>
                             </select>
                           </div>
                         </div>
