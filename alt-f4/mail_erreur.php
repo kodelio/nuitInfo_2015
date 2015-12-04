@@ -7,7 +7,7 @@ session_start();
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Alt-F4 | Mail Erreur</title>
+  <title>Alt-F4 | Mail erreur</title>
   <!-- Bootstrap 3.3.5 -->
   <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
   <!-- Font Awesome -->
@@ -96,7 +96,9 @@ session_start();
 <!-- sidebar menu: : style can be found in sidebar.less -->
 <ul class="sidebar-menu">
  <li class="header">PLAN DU SITE</li>
+ <?php if (!isset($_SESSION['LOGINUSER'])) { ?>
  <li><a href="Connexion.php"><i class="fa fa-lock"></i> <span>Connexion</span></a></li>
+ <?php } ?>
  <li><a href="index.php"><i class="fa fa-globe"></i> <span>Carte des évènements</span></a></li>
  <li><a href="contact.php"><i class="fa fa-ambulance"></i> <span>Contacts/Lieux utiles</span></a></li>            
  <li class="treeview">
