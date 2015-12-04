@@ -205,9 +205,9 @@
 								<h3>Crise cardiaque</h3>
 								<p>Arret des battements du coeur de la victime ou battements très anormalement lent.</p>
 							</div>
-							<!-- <div class="icon">
-								<i class="ion ion-bag"></i>
-							</div> -->
+							<div class="icon">
+								<i class="fa fa-heartbeat"></i>
+							</div>
 							<button class="small-box-footer btn" data-widget="collapse"><i class="fa fa-plus"></i> Plus d'info</button>
 						</div>
 						<div class="box-body">
@@ -222,7 +222,7 @@
 						</div>
 					</div>
 				</div>
-				<!-- Noyade -->
+				<!-- Etapes de secours -->
 				<div class="col-lg-4 col-md-6 col-xs-12" style="width: 100%">
 					<div class="box box-default collapsed-box">
 						<div class="small-box bg-aqua">
@@ -230,9 +230,9 @@
 								<h3>4 étapes de secours</h3>
 								<p>Quelle que soit la situation d'urgence, il importe d'apprécier correctement la situation et de réaliser les gestes de premiers secours de manière appropriée.</p>
 							</div>
-							<!-- <div class="icon">
-								<i class="ion ion-bag"></i>
-							</div> -->
+							<div class="icon">
+								<i class="fa fa-check-square-o"></i>
+							</div>
 							<button class="small-box-footer btn" data-widget="collapse"><i class="fa fa-plus"></i> Plus d'info</button>
 						</div>
 						<div class="box-body">
@@ -251,9 +251,9 @@
 								<h3>Etouffement</h3>
 								<p>Chez les adultes, l'étouffement survient généralement au cours d'un repas, en présence d'autres personnes. Dans tous les cas, il faut agir vite !</p>
 							</div>
-							<!-- <div class="icon">
-								<i class="ion ion-bag"></i>
-							</div> -->
+							<div class="icon">
+								<i class="fa fa-asterisk"></i>
+							</div>
 							<button class="small-box-footer btn" data-widget="collapse"><i class="fa fa-plus"></i> Plus d'info</button>
 						</div>
 						<div class="box-body">
@@ -273,9 +273,9 @@
 								<h3>Saignement</h3>
 								<p>Lorsque le sang gicle ou coule de façon continue de la plaie, une pression doit être exercée directement sur celle-ci afin d'arrêter le saignement.</p>
 							</div>
-							<!-- <div class="icon">
-								<i class="ion ion-bag"></i>
-							</div> -->
+							<div class="icon">
+								<i class="fa fa-asterisk"></i>
+							</div>
 							<button class="small-box-footer btn" data-widget="collapse"><i class="fa fa-plus"></i> Plus d'info</button>
 						</div>
 						<div class="box-body">
@@ -298,9 +298,9 @@
 								<h3>Inconscience</h3>
 								<p>Si la victime est inconsciente, et si sa poitrine se soulève régulièrement, il faut libérer les voies aériennes et la placer en position latérale de sécurité.</p>
 							</div>
-							<!-- <div class="icon">
-								<i class="ion ion-bag"></i>
-							</div> -->
+							<div class="icon">
+								<i class="fa fa-asterisk"></i>
+							</div>
 							<button class="small-box-footer btn" data-widget="collapse"><i class="fa fa-plus"></i> Plus d'info</button>
 						</div>
 						<div class="box-body">
@@ -321,9 +321,9 @@
 								<h3>Malaise cardiaque</h3>
 								<p>Si la victime parle, se sent mal, il est indispensable de lui poser des questions et d'alerter le Samu Centre 15 qui pourra juger du degré d'urgence.</p>
 							</div>
-							<!-- <div class="icon">
-								<i class="ion ion-bag"></i>
-							</div> -->
+							<div class="icon">
+								<i class="fa fa-heartbeat"></i>
+							</div>
 							<button class="small-box-footer btn" data-widget="collapse"><i class="fa fa-plus"></i> Plus d'info</button>
 						</div>
 						<div class="box-body">
