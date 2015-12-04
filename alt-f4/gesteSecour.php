@@ -198,12 +198,12 @@
 		<section class="content">
 			<div class="row">
 				<!-- Crise cardiaque -->
-				<div class="col-lg-4 col-md-6 col-xs-12">
+				<div class="col-lg-4 col-md-6 col-xs-12" style="width: 100%">
 					<div class="box box-default collapsed-box">
 						<div class="small-box bg-yellow">
 							<div class="inner">
 								<h3>Crise cardiaque</h3>
-								<p>Arret des battements du coeur de la victime ou battements très anormalement lent.</p><br><br>
+								<p>Arret des battements du coeur de la victime ou battements très anormalement lent.</p>
 							</div>
 							<!-- <div class="icon">
 								<i class="ion ion-bag"></i>
@@ -223,7 +223,7 @@
 					</div>
 				</div>
 				<!-- Noyade -->
-				<div class="col-lg-4 col-md-6 col-xs-12">
+				<div class="col-lg-4 col-md-6 col-xs-12" style="width: 100%">
 					<div class="box box-default collapsed-box">
 						<div class="small-box bg-aqua">
 							<div class="inner">
@@ -244,7 +244,7 @@
 					</div>
 				</div>
 				<!-- Etouffement -->
-				<div class="col-lg-4 col-md-6 col-xs-12">
+				<div class="col-lg-4 col-md-6 col-xs-12" style="width: 100%">
 					<div class="box box-default collapsed-box">
 						<div class="small-box bg-green">
 							<div class="inner">
@@ -266,12 +266,12 @@
 					</div>
 				</div>
 				<!-- Saignement -->
-				<div class="col-lg-4 col-md-6 col-xs-12">
+				<div class="col-lg-4 col-md-6 col-xs-12" style="width: 100%">
 					<div class="box box-default collapsed-box">
 						<div class="small-box bg-red">
 							<div class="inner">
 								<h3>Saignement</h3>
-								<p>Lorsque le sang gicle ou coule de façon continue de la plaie, une pression doit être exercée directement sur celle-ci afin d'arrêter le saignement.</p><br>
+								<p>Lorsque le sang gicle ou coule de façon continue de la plaie, une pression doit être exercée directement sur celle-ci afin d'arrêter le saignement.</p>
 							</div>
 							<!-- <div class="icon">
 								<i class="ion ion-bag"></i>
@@ -291,7 +291,7 @@
 					</div>
 				</div>
 				<!-- Inconscience -->
-				<div class="col-lg-4 col-md-6 col-xs-12">
+				<div class="col-lg-4 col-md-6 col-xs-12" style="width: 100%">
 					<div class="box box-default collapsed-box">
 						<div class="small-box bg-green">
 							<div class="inner">
@@ -314,12 +314,12 @@
 					</div>
 				</div>	
 				<!-- Malaise cardiaque -->
-				<div class="col-lg-4 col-md-6 col-xs-12">
+				<div class="col-lg-4 col-md-6 col-xs-12" style="width: 100%">
 					<div class="box box-default collapsed-box">
 						<div class="small-box bg-yellow">
 							<div class="inner">
 								<h3>Malaise cardiaque</h3>
-								<p>Si la victime parle, se sent mal, il est indispensable de lui poser des questions et d'alerter le Samu Centre 15 qui pourra juger du degré d'urgence.</p><br>
+								<p>Si la victime parle, se sent mal, il est indispensable de lui poser des questions et d'alerter le Samu Centre 15 qui pourra juger du degré d'urgence.</p>
 							</div>
 							<!-- <div class="icon">
 								<i class="ion ion-bag"></i>
@@ -338,9 +338,6 @@
 		</section>
 	</div>
 
-            <footer class="main-footer">
-               FOOTER
-            </footer>
             <!-- Add the sidebar's background. This div must be placed
             immediately after the control sidebar -->
             <div class="control-sidebar-bg"></div>

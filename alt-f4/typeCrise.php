@@ -199,9 +199,8 @@
 		<section class="content">
 			<div class="row">
 			
-				<div style="">
 				<!-- Incendie -->
-				<div class="col-lg-4 col-md-6 col-xs-12">
+				<div class="col-lg-4 col-md-6 col-xs-12" style="width: 100%">
 					<div class="box box-default collapsed-box">
 						<div class="small-box bg-red">
 							<div class="inner">
@@ -232,7 +231,7 @@
 					</div>
 				</div>
 				<!-- Tsunamies -->
-				<div class="col-lg-4 col-md-6 col-xs-12">
+				<div class="col-lg-4 col-md-6 col-xs-12" style="width: 100%">
 					<div class="box box-default collapsed-box">
 						<div class="small-box bg-aqua">
 							<div class="inner">
@@ -273,7 +272,7 @@
 					</div>
 				</div>
 				<!-- Séisme -->
-				<div class="col-lg-4 col-md-6 col-xs-12">
+				<div class="col-lg-4 col-md-6 col-xs-12" style="width: 100%">
 					<div class="box box-default collapsed-box">
 						<div class="small-box bg-green">
 							<div class="inner">
@@ -315,10 +314,8 @@
 						</div>
 					</div>
 				</div>
-				</div>
-				<div>
 				<!-- Epidémies -->
-				<div class="col-lg-4 col-md-6 col-xs-12">
+				<div class="col-lg-4 col-md-6 col-xs-12" style="width: 100%">
 					<div class="box box-default collapsed-box">
 						<div class="small-box bg-yellow">
 							<div class="inner">
@@ -337,7 +334,7 @@
 					</div>
 				</div>
 				<!-- Attentats -->
-				<div class="col-lg-4 col-md-6 col-xs-12">
+				<div class="col-lg-4 col-md-6 col-xs-12" style="width: 100%">
 					<div class="box box-default collapsed-box">
 						<div class="small-box bg-red">
 							<div class="inner">
@@ -369,11 +366,9 @@
 							<p>Il n’y a jamais de garanties, mais avec un peu de vigilance, de réalisme et un minimum de préparation, on peut mettre des chances de son côté.</p>
 						</div>
 					</div>
-				</div>	
 				</div>
-				<div>
 				<!-- Guerre -->
-				<div class="col-lg-4 col-md-6 col-xs-12">
+				<div class="col-lg-4 col-md-6 col-xs-12" style="width: 100%">
 					<div class="box box-default collapsed-box">
 						<div class="small-box bg-yellow">
 							<div class="inner">
@@ -393,7 +388,7 @@
 					</div>
 				</div>
 				<!-- Radioactivité -->
-				<div class="col-lg-4 col-md-6 col-xs-12">
+				<div class="col-lg-4 col-md-6 col-xs-12" style="width: 100%">
 					<div class="box box-default collapsed-box">
 						<div class="small-box bg-green">
 							<div class="inner">
@@ -405,19 +400,15 @@
 							<button class="small-box-footer btn" data-widget="collapse"><i class="fa fa-plus"></i> Plus d'info</button>
 						</div>
 						<div class="box-body">
-							<p>Became a X-Men ! Oh yeaaah !</p>
+							<p>Quittez la ville et rejoindre l'<a href="contact.php">hôpitale</a> le plus proche au plus vite.</p>
 						</div>
 					</div>
-				</div>
 				</div>
 				
 			</div>
 		</section>
 	</div>
 
-            <footer class="main-footer">
-               FOOTER
-            </footer>
             <!-- Add the sidebar's background. This div must be placed
             immediately after the control sidebar -->
             <div class="control-sidebar-bg"></div>
