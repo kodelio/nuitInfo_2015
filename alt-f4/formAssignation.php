@@ -1,26 +1,33 @@
 <?php
-    session_start();
+session_start();
+if ((isset($_POST['Operation'])) AND ($_POST['Operation']!="")){
+  if ((isset($_POST['Employe'])) AND ($_POST['Employe']!="")){
+    $bdd = new PDO('mysql:host=localhost;dbname=rgdyprykza;charset=utf8', 'rgdyprykza', 'rRv2tVZK6P');
+    $myquery = $bdd->prepare("INSERT INTO asso_user_op(ID_USER, ID_OPERATION)  VALUES(?,?);");
+    $myquery->execute(array($_POST['Employe'],$_POST['Operation']));
+  }
+}
+if(isset($_SESSION['TYPEUSER']) && $_SESSION['TYPEUSER'] == 2)
+{
 
-    if(isset($_SESSION['TYPEUSER']) && $_SESSION['TYPEUSER'] == 3)
-    {
-?>
+  ?>
 
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 2 | Blank</title>
-  <!-- Tell the browser to be responsive to screen width -->
-  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  <!-- Bootstrap 3.3.5 -->
-  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-  <!-- Ionicons -->
-  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-  <!-- Theme style -->
-  <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+  <!DOCTYPE html>
+  <html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>AdminLTE 2 | Blank</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.5 -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
     <!-- AdminLTE Skins. Choose a skin from the css/skins
     folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
@@ -31,10 +38,9 @@
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
-    </head>
-    <body class="hold-transition skin-blue sidebar-mini">
-      <!-- Site wrapper -->
-      <div class="wrapper">
+      </head>
+      <body class="hold-transition skin-blue sidebar-mini">
+
 
         <header class="main-header">
           <!-- Logo -->
@@ -136,7 +142,7 @@
             <ul class="sidebar-menu">
               <li class="header">PLAN DU SITE</li>
 
-              <li><a href="maps.php"><i class="fa fa-globe"></i> <span>Carte des évènements</span></a></li>
+              <li><a href="index.php"><i class="fa fa-globe"></i> <span>Carte des évènements</span></a></li>
               <li><a href="contact.php"><i class="fa fa-ambulance"></i> <span>Contacts/Lieux utiles</span></a></li>            
               <li class="treeview">
                 <a href="#">
@@ -148,99 +154,93 @@
                   <li><a href="typeCrise.php"><i class="fa fa-lightbulb-o"></i>S'informer sur <br>une catastrophe</a></li>
                 </ul>
               </li>
-                        <?php
-                            if(isset($_SESSION['TYPEUSER']))
-                            {
-                        ?>
-                     <li class="header">ACTIONS</li>
-                                <?php
-                                    if ($_SESSION['TYPEUSER'] == 3)
-                                    {
-                                ?>
-                              <li><a href="FormCrise.php"><i class="fa fa-plus"></i> <span>Ajouter une crise</span></a></li>
-                              <li><a href="ajoutChefSecour.php"><i class="fa fa-plus"></i> <span>Associer chef secours à <br>une crise</span></a></li>
-                                <?php
-                                    }
-                                    else if($_SESSION['TYPEUSER'] == 2)
-                                    {
-                                ?>
-                              <li><a href="formAssignation.php"><i class="fa fa-plus"></i> <span>Associer secours à <br>une opération</span></a></li>
-                              <li><a href="formOperation.php"><i class="fa fa-plus"></i> <span>Ajouter une opération</span></a></li>
-                                <?php
-                                    }
-                                    else if($_SESSION['TYPEUSER'] == 1)
-                                    {
-                                ?>
-                              <li><a href="operation.php"><i class="fa fa-binoculars"></i> <span>Voir mes opérations</span></a></li>//1
-                        <?php
-                                    }
-                            }
-                        ?>
+              <?php
+              if(isset($_SESSION['TYPEUSER']))
+              {
+                ?>
+                <li class="header">ACTIONS</li>
+                <?php
+                if ($_SESSION['TYPEUSER'] == 3)
+                {
+                  ?>
+                  <li><a href="FormCrise.php"><i class="fa fa-plus"></i> <span>Ajouter une crise</span></a></li>
+                  <li><a href="ajoutChefSecour.php"><i class="fa fa-plus"></i> <span>Associer chef secours à <br>une crise</span></a></li>
+                  <?php
+                }
+                else if($_SESSION['TYPEUSER'] == 2)
+                {
+                  ?>
+                  <li><a href="formAssignation.php"><i class="fa fa-plus"></i> <span>Associer secours à <br>une opération</span></a></li>
+                  <li><a href="formOperation.php"><i class="fa fa-plus"></i> <span>Ajouter une opération</span></a></li>
+                  <?php
+                }
+                else if($_SESSION['TYPEUSER'] == 1)
+                {
+                  ?>
+                  <li><a href="operation.php"><i class="fa fa-binoculars"></i> <span>Voir mes opérations</span></a></li>//1
+                  <?php
+                }
+              }
+              ?>
             </ul>
           </section>
           <!-- /.sidebar -->
         </aside>
 
         <!-- =============================================== -->
-      <!-- Content Wrapper. Contains page content -->
-      <div class="content-wrapper">
-      <section class="content-header">
-        </section>
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+          <section class="content-header">
+          </section>
 
-        <section class="content">
-        <div class="col-md-12 form">
-          <div class="box box-info">
-            <div class="box-header with-border">
-              <h3 class="box-title">Assigner un employé à une opération</h3>
-            </div><!-- /.box-header -->
-            <!-- form start -->
-            <form class="form-horizontal" method="POST" action="">
-              <div class="box-body">
-                <div class="form-group">
-                  <label for="criseAssignation" class="col-sm-2 control-label">Crise</label>
-                  <div class="col-sm-9">
-                    <select class="form-control" id="criseAssignation" name="criseAssignation">
-                      <option>option 1</option>
-                      <option>option 2</option>
-                      <option>option 3</option>
-                      <option>option 4</option>
-                      <option>option 5</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label for="operationAssignation" class="col-sm-2 control-label">Opération</label>
-                  <div class="col-sm-9">
-                    <select class="form-control" id="operationAssignation" name="operationAssignation">
-                      <option>option 1</option>
-                      <option>option 2</option>
-                      <option>option 3</option>
-                      <option>option 4</option>
-                      <option>option 5</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label for="employeAssignation" class="col-sm-2 control-label">Employer</label>
-                  <div class="col-sm-9">
-                    <select class="form-control" id="employeAssignation" name="employeAssignation">
-                      <option>option 1</option>
-                      <option>option 2</option>
-                      <option>option 3</option>
-                      <option>option 4</option>
-                      <option>option 5</option>
-                    </select>
-                  </div>
-                </div>
-              </div><!-- /.box-body -->
-              <div class="box-footer">
-                <button type="submit" class="btn btn-info pull-right">Validé</button>
-              </div><!-- /.box-footer -->
-            </form>
-          </div>
-        </div>
-        </section>
-      </div><!-- /.content-wrapper -->
+          <section class="content">
+            <div class="col-md-12 form">
+              <div class="box box-info">
+                <div class="box-header with-border">
+                  <h3 class="box-title">Assigner un employé à une opération</h3>
+                </div><!-- /.box-header -->
+                <!-- form start -->
+                <form class="form-horizontal" method="POST" action="">
+                  <div class="box-body">
+                    <div class="form-group">
+                      <label for="operationAssignation" class="col-sm-2 control-label">Opération</label>
+                      <div class="col-sm-9">
+                        <select class="form-control" id="Operation" name="Operation" required>
+                          <?php
+                          $bdd = new PDO('mysql:host=localhost;dbname=rgdyprykza;charset=utf8', 'rgdyprykza', 'rRv2tVZK6P');
+                          $myquery = $bdd->prepare("Select ID_OPERATION, NOM from operation where ID_USER=?;");
+                          $myquery->execute(array($_SESSION['IDUSER']));
+                          while($row = $myquery->fetch()){?>
+                          <option value="<?php echo $row['ID_OPERATION']; ?>"><?php echo $row['NOM']; ?></option>
+                          <?php }
+                          ?>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="employeAssignation" class="col-sm-2 control-label">Employé</label>
+                      <div class="col-sm-9">
+                        <select class="form-control" id="Employe" name="Employe" required>
+                          <?php
+                          $bdd = new PDO('mysql:host=localhost;dbname=rgdyprykza;charset=utf8', 'rgdyprykza', 'rRv2tVZK6P');
+                          $myquery = $bdd->prepare("Select utilisateur.ID_USER, LOGIN from utilisateur inner join asso_chef_user ON utilisateur.ID_USER=asso_chef_user.ID_USER where ID_CHEF=?;");
+                          $myquery->execute(array($_SESSION['IDUSER']));
+                          while($row = $myquery->fetch()){?>
+                          <option value="<?php echo $row['ID_USER']; ?>"><?php echo $row['LOGIN']; ?></option>
+                          <?php }
+                          ?>
+                        </select>
+                      </div>
+                    </div>
+                  </div><!-- /.box-body -->
+                  <div class="box-footer">
+                    <button type="submit" class="btn btn-info pull-right">Valider</button>
+                  </div><!-- /.box-footer -->
+                </form>
+              </div>
+            </div>
+          </section>
+        </div><!-- /.content-wrapper -->
 
         <!-- jQuery 2.1.4 -->
         <script src="plugins/jQuery/jQuery-2.1.4.min.js"></script>
@@ -254,12 +254,12 @@
         <script src="dist/js/app.min.js"></script>
         <!-- AdminLTE for demo purposes -->
         <script src="dist/js/demo.js"></script>
-    </body>
-</html>
-<?php
-  }
-  else
-  {
-    header("maps.php");
-  }
-?>
+      </body>
+      </html>
+      <?php
+    }
+    else
+    {
+      header("index.php");
+    }
+    ?>

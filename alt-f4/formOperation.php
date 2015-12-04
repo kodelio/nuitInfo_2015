@@ -148,7 +148,7 @@ if(isset($_SESSION['TYPEUSER']) && $_SESSION['TYPEUSER'] == 2)
               <ul class="sidebar-menu">
                 <li class="header">PLAN DU SITE</li>
 
-                <li><a href="maps.php"><i class="fa fa-globe"></i> <span>Carte des évènements</span></a></li>
+                <li><a href="index.php"><i class="fa fa-globe"></i> <span>Carte des évènements</span></a></li>
                 <li><a href="contact.php"><i class="fa fa-ambulance"></i> <span>Contacts/Lieux utiles</span></a></li>            
                 <li class="treeview">
                   <a href="#">
@@ -263,6 +263,6 @@ if(isset($_SESSION['TYPEUSER']) && $_SESSION['TYPEUSER'] == 2)
       }
       else
       {
-        header("maps.php");
+        header("index.php");
       }
       ?>
