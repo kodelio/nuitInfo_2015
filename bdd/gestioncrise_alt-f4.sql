@@ -171,23 +171,23 @@ INSERT INTO gestioncrise_alt_f4.`operation` (`ID_USER`, `ID_OPERATION`, `NOM`) V
 -- --------------------------------------------------------
 
 --
--- Structure de la table `user`
+-- Structure de la table `utilisateur`
 --
 
-CREATE TABLE IF NOT EXISTS gestioncrise_alt_f4.`user` (
+CREATE TABLE IF NOT EXISTS gestioncrise_alt_f4.`utilisateur` (
   `ID_USER` int(11) NOT NULL AUTO_INCREMENT,
   `TYPE_USER` int(11) NOT NULL,
   `LOGIN` varchar(20) NOT NULL,
-  `PASSWORD` varchar(20) NOT NULL,
+  `PWD` varchar(20) NOT NULL,
   `mail` varchar(255) NOT NULL,
   PRIMARY KEY (`ID_USER`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
--- Contenu de la table `user`
+-- Contenu de la table `utilisateur`
 --
 
-INSERT INTO gestioncrise_alt_f4.`user` (`ID_USER`, `TYPE_USER`, `LOGIN`, `PASSWORD`, `mail`) VALUES
+INSERT INTO gestioncrise_alt_f4.`utilisateur` (`ID_USER`, `TYPE_USER`, `LOGIN`, `PWD`, `mail`) VALUES
 (1, 1, 'secours', 'secours', 'marc-secour@gmail.com'),
 (2, 2, 'chef', 'chef', 'pierre-chefsecour@gmail.com'),
 (3, 3, 'admin', 'admin', 'superadminAltF4@gmail.com');
@@ -201,7 +201,7 @@ INSERT INTO gestioncrise_alt_f4.`user` (`ID_USER`, `TYPE_USER`, `LOGIN`, `PASSWO
 --
 ALTER TABLE gestioncrise_alt_f4.`asso_chef_crise`
   ADD CONSTRAINT `asso_chef_crise_ibfk_2` FOREIGN KEY (`ID_CRISE`) REFERENCES `crise` (`ID_CRISE`),
-  ADD CONSTRAINT `asso_chef_crise_ibfk_1` FOREIGN KEY (`ID_USER`) REFERENCES `user` (`ID_USER`);
+  ADD CONSTRAINT `asso_chef_crise_ibfk_1` FOREIGN KEY (`ID_USER`) REFERENCES `utilisateur` (`ID_USER`);
 
 --
 -- Contraintes pour la table `asso_lieu_crise`
@@ -222,13 +222,13 @@ ALTER TABLE gestioncrise_alt_f4.`asso_operation_crise`
 --
 ALTER TABLE gestioncrise_alt_f4.`asso_user_op`
   ADD CONSTRAINT `asso_user_op_ibfk_2` FOREIGN KEY (`ID_OPERATION`) REFERENCES `operation` (`ID_OPERATION`),
-  ADD CONSTRAINT `asso_user_op_ibfk_1` FOREIGN KEY (`ID_USER`) REFERENCES `user` (`ID_USER`);
+  ADD CONSTRAINT `asso_user_op_ibfk_1` FOREIGN KEY (`ID_USER`) REFERENCES `utilisateur` (`ID_USER`);
 
 --
 -- Contraintes pour la table `operation`
 --
 ALTER TABLE gestioncrise_alt_f4.`operation`
-  ADD CONSTRAINT `operation_ibfk_1` FOREIGN KEY (`ID_USER`) REFERENCES `user` (`ID_USER`);
+  ADD CONSTRAINT `operation_ibfk_1` FOREIGN KEY (`ID_USER`) REFERENCES `utilisateur` (`ID_USER`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
