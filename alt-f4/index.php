@@ -98,7 +98,9 @@ session_start();
 <!-- sidebar menu: : style can be found in sidebar.less -->
 <ul class="sidebar-menu">
  <li class="header">PLAN DU SITE</li>
+ <?php if (!isset($_SESSION['LOGINUSER'])) { ?>
  <li><a href="Connexion.php"><i class="fa fa-lock"></i> <span>Connexion</span></a></li>
+ <?php } ?>
  <li><a href="index.php"><i class="fa fa-globe"></i> <span>Carte des évènements</span></a></li>
  <li><a href="contact.php"><i class="fa fa-ambulance"></i> <span>Contacts/Lieux utiles</span></a></li>            
  <li class="treeview">
@@ -151,52 +153,62 @@ if(isset($_SESSION['TYPEUSER']))
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
 
-  <!-- Main content -->
-  <section class="content">
+ <!-- Main content -->
+ <section class="content">
 
-    
 
-    <div class="box box-success">
-      <div class="box-header with-border">
-        <h3 class="box-title">Carte des évènements</h3>
-      </div><!-- /.box-header -->
-      <div class="box-body no-padding">
-        <div class="row">
-          <div class="col-md-12 col-sm-12">
-            <div class="pad">
-              <!-- Map will be created here -->
-              <div id="world-map-markers" style="height: 325px;"></div>
-              <h2 id="mapInfoTitle"></h2>
-              <p id="mapInfoDetails"></p>
-            </div>
-          </div><!-- /.col -->
-        </div>                                
-      </div><!-- /.box-body -->
-    </div>
 
-  </section><!-- /.content -->
+
+
+
+
+  <div class="box box-success">
+    <div class="box-header with-border">
+      <h3 class="box-title">Carte des évènements</h3>
+    </div><!-- /.box-header -->
+    <div class="box-body no-padding">
+      <div class="row">
+        <div class="col-md-12 col-sm-12">
+          <div class="pad">
+            <!-- Map will be created here -->
+            <div id="world-map-markers" style="height: 325px;"></div>
+            <h2 id="mapInfoTitle"></h2>
+            <p id="mapInfoDetails"></p>
+          </div>
+        </div><!-- /.col -->
+      </div>                                
+    </div><!-- /.box-body -->
+  </div>
+
+
+
+
+
+
+
+</section><!-- /.content -->
 </div><!-- /.content-wrapper -->
 <footer class="main-footer">
-  Copyright © 2015 - <strong>Alt-F4 Team</strong> - Nuit de l'Info 2015
+ Copyright © 2015 - <strong>Alt-F4 Team</strong> - Nuit de l'Info 2015
 </footer>
-    <!-- Add the sidebar's background. This div must be placed
-    immediately after the control sidebar -->
-    <div class="control-sidebar-bg"></div>
-  </div><!-- ./wrapper -->
+            <!-- Add the sidebar's background. This div must be placed
+            immediately after the control sidebar -->
+            <div class="control-sidebar-bg"></div>
+          </div><!-- ./wrapper -->
 
-  <!-- jQuery 2.1.4 -->
-  <script src="plugins/jQuery/jQuery-2.1.4.min.js"></script>
-  <!-- Bootstrap 3.3.5 -->
-  <script src="bootstrap/js/bootstrap.min.js"></script>
-  <!-- SlimScroll -->
-  <script src="plugins/slimScroll/jquery.slimscroll.min.js"></script>
-  <!-- FastClick -->
-  <script src="plugins/fastclick/fastclick.min.js"></script>
-  <!-- AdminLTE App -->
-  <script src="dist/js/app.min.js"></script>
-  <!-- jvectormap -->
-  <script src="dist/js/map.js"></script>
-  <script src="plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
-  <script src="plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
-</body>
-</html>
+          <!-- jQuery 2.1.4 -->
+          <script src="plugins/jQuery/jQuery-2.1.4.min.js"></script>
+          <!-- Bootstrap 3.3.5 -->
+          <script src="bootstrap/js/bootstrap.min.js"></script>
+          <!-- SlimScroll -->
+          <script src="plugins/slimScroll/jquery.slimscroll.min.js"></script>
+          <!-- FastClick -->
+          <script src="plugins/fastclick/fastclick.min.js"></script>
+          <!-- AdminLTE App -->
+          <script src="dist/js/app.min.js"></script>
+          <!-- jvectormap -->
+          <script src="dist/js/map.js"></script>
+          <script src="plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+          <script src="plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+        </body>
+        </html>
