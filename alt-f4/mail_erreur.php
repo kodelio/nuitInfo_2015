@@ -161,147 +161,16 @@
 
                 <!-- Main content -->
                 <section class="content">
-                    <h2>Contact par email</h2>
-                    <form action="traitement-contact/traitement-contact.php" method="post">
-                        <div class="box box-solid">
-                            <div class="box-body">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="row ">
-                                            <div class="form-group col-md-6">
-                                                <label>Nom</label>
-                                                <input id="firstName" class="form-control" type="text" name="nom" placeholder="Entrez votre Nom">
-                                            </div>
-
-                                            <div class="form-group col-md-6">
-                                                <label>E-mail</label>
-                                                <input id="email" class="form-control" type="email" name="email" placeholder="Entrez votre Email">
-                                            </div>
-
-                                            <div class="form-group col-md-6">
-                                                <label>ONG</label>
-                                                <select class="form-control" name="ONG">
-                                                    <option value="unicef@alt-f4-team.fr">Unicef</option>
-                                                    <option value="msf@alt-f4-team.fr">Médecins Sans Frontières</option>
-                                                    <option value="croix-rouge@alt-f4-team.fr">Croix Rouge</option>
-                                                </select>
-                                            </div>
-
-                                            <div class="form-group col-md-12">
-                                                <textarea id="email" class="form-control" rows="5" name="message" placeholder="Entrez votre message"></textarea> 
-                                            </div>
-
-                                            <div class="form-group col-md-1">
-                                                <button type="submit" class="btn btn-default">Envoyer</button> 
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><!-- /.box-body -->
-                        </div><!-- /.box -->
-                    </form>
-
-                    <h2>Contact par téléphone</h2>
-                    <div class="box box-solid">
-                        <div class="box-body">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="row ">
-                                        <div class="col-lg-4 col-md-6 col-xs-12">
-                                            <div class="small-box bg-blue">
-                                                <div class="inner">
-                                                    <h3>Police</h3>
-                                                    <p>Numéro : 17</p>
-                                                </div>
-                                                <div class="icon">
-                                                    <i class="fa fa-phone"></i>
-                                                </div>
-                                                <a href="tel:17" class="small-box-footer">Appeler <i class="fa fa-arrow-circle-right"></i></a>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-lg-4 col-md-6 col-xs-12">
-                                            <div class="small-box bg-orange">
-                                                <div class="inner">
-                                                    <h3>SAMU</h3>
-                                                    <p>Numéro : 15</p>
-                                                </div>
-                                                <div class="icon">
-                                                    <i class="fa fa-phone"></i>
-                                                </div>
-                                                <a href="tel:15" class="small-box-footer">Appeler <i class="fa fa-arrow-circle-right"></i></a>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-lg-4 col-md-6 col-xs-12">
-                                            <div class="small-box bg-red">
-                                                <div class="inner">
-                                                    <h3>Pompiers</h3>
-                                                    <p>Numéro : 18</p>
-                                                </div>
-                                                <div class="icon">
-                                                    <i class="fa fa-phone"></i>
-                                                </div>
-                                                <a href="tel:18" class="small-box-footer">Appeler <i class="fa fa-arrow-circle-right"></i></a>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-lg-offset-2 col-lg-4 col-md-6 col-xs-12">
-                                            <div class="small-box bg-green">
-                                                <div class="inner">
-                                                    <h3>Urgences U.E</h3>
-                                                    <p>Numéro : 112</p>
-                                                </div>
-                                                <div class="icon">
-                                                    <i class="fa fa-phone"></i>
-                                                </div>
-                                                <a href="tel:112" class="small-box-footer">Appeler <i class="fa fa-arrow-circle-right"></i></a>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-lg-4 col-md-6 col-xs-12">
-                                            <div class="small-box bg-blue">
-                                                <div class="inner">
-                                                    <h3>Secours Mer</h3>
-                                                    <p>Numéro : 196</p>
-                                                </div>
-                                                <div class="icon">
-                                                    <i class="fa fa-phone"></i>
-                                                </div>
-                                                <a href="tel:196" class="small-box-footer">Appeler <i class="fa fa-arrow-circle-right"></i></a>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <h2>Liens utiles</h2>
-                    <div class="box box-solid">
-                        <div class="box-body">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="row ">
-                                        <ul>
-                                            <li><a href="http://www.unicef.org/french/">UNICEF</a></li>
-                                            <li><a href="http://www.msf.fr/">Médecins Sans Frontières</a></li>
-                                            <li><a href="http://www.croix-rouge.fr/">Croix Rouges</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section><!-- /.content -->
-            </div><!-- /.content-wrapper -->
+                    <h1>Une erreur est survenue dans l'envoi de l'email !</h1>
+                    <META http-equiv="refresh" content="3; URL=contact.php">
+                    </section><!-- /.content -->
+                </div><!-- /.content-wrapper -->
 
 
 
-            <footer class="main-footer">
-             FOOTER
-         </footer>
+                <footer class="main-footer">
+                   FOOTER
+               </footer>
             <!-- Add the sidebar's background. This div must be placed
             immediately after the control sidebar -->
             <div class="control-sidebar-bg"></div>
