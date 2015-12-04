@@ -5,24 +5,24 @@ session_start();
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Alt-F4 | Carte</title>
-    <!-- Bootstrap 3.3.5 -->
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <!-- Ionicons -->
-    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-    <!-- Theme style -->
-    <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Alt-F4 | Carte</title>
+  <!-- Bootstrap 3.3.5 -->
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
     <!-- AdminLTE Skins. Choose a skin from the css/skins
     folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
     <!-- map Jvector -->
     <link rel="stylesheet" href="plugins/jvectormap/jquery-jvectormap-1.2.2.css">
 
-    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="icon" type="image/ico" href="favicon.ico" />
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -146,39 +146,39 @@ if(isset($_SESSION['TYPEUSER']))
 <!-- /.sidebar -->
 </aside>
 
-        <!-- =============================================== -->
+<!-- =============================================== -->
 
-        <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper">
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
 
-            <!-- Main content -->
-            <section class="content">
+  <!-- Main content -->
+  <section class="content">
 
-  
+    
 
-                <div class="box box-success">
-                    <div class="box-header with-border">
-                        <h3 class="box-title">Carte des évènements</h3>
-                    </div><!-- /.box-header -->
-                    <div class="box-body no-padding">
-                        <div class="row">
-                            <div class="col-md-12 col-sm-12">
-                                <div class="pad">
-                                    <!-- Map will be created here -->
-                                    <div id="world-map-markers" style="height: 325px;"></div>
-                                    <h2 id="mapInfoTitle"></h2>
-                                    <p id="mapInfoDetails"></p>
-                                </div>
-                            </div><!-- /.col -->
-                        </div>                                
-                    </div><!-- /.box-body -->
-                </div>
+    <div class="box box-success">
+      <div class="box-header with-border">
+        <h3 class="box-title">Carte des évènements</h3>
+      </div><!-- /.box-header -->
+      <div class="box-body no-padding">
+        <div class="row">
+          <div class="col-md-12 col-sm-12">
+            <div class="pad">
+              <!-- Map will be created here -->
+              <div id="world-map-markers" style="height: 325px;"></div>
+              <h2 id="mapInfoTitle"></h2>
+              <p id="mapInfoDetails"></p>
+            </div>
+          </div><!-- /.col -->
+        </div>                                
+      </div><!-- /.box-body -->
+    </div>
 
-            </section><!-- /.content -->
-        </div><!-- /.content-wrapper -->
-        <footer class="main-footer">
-            Copyright © 2015 - <strong>Alt-F4 Team</strong> - Nuit de l'Info 2015
-        </footer>
+  </section><!-- /.content -->
+</div><!-- /.content-wrapper -->
+<footer class="main-footer">
+  Copyright © 2015 - <strong>Alt-F4 Team</strong> - Nuit de l'Info 2015
+</footer>
     <!-- Add the sidebar's background. This div must be placed
     immediately after the control sidebar -->
     <div class="control-sidebar-bg"></div>
