@@ -1,6 +1,16 @@
 <?php
     session_start();
-
+    if ((isset($_POST['CriseID'])) AND ($_POST['CriseID']!="")){
+            if ((isset($_POST['nameOperation'])) AND ($_POST['nameOperation']!="")){
+                $bdd = new PDO('mysql:host=localhost;dbname=rgdyprykza;charset=utf8', 'rgdyprykza', 'rRv2tVZK6P');
+                $myquery = $bdd->prepare("INSERT INTO operation(ID_USER, NOM) operation VALUES(?,?);");
+                $myquery->execute(array($_SESSION['IDUSER'],$_POST['nameOperation']));
+                $myquery = $bdd->prepare("Select  ID_OPERATION from operation where NOM=?;");
+                $myquery->execute(array($_POST['nameOperation']));
+                $myquery = $bdd->prepare("INSERT INTO asso_operation_crise(ID_CRISE, ID_OPERATION)  VALUES(?,?);");
+                $myquery->execute(array($_POST['CriseID'],$_POST['nameOperation']));
+            }
+    }
     if(isset($_SESSION['TYPEUSER']) && $_SESSION['TYPEUSER'] == 2)
     {
 ?>
@@ -195,7 +205,7 @@
               <h3 class="box-title">Ajouter une opération</h3>
             </div><!-- /.box-header -->
             <!-- form start -->
-            <form class="form-horizontal" method="POST" action="">
+            <form class="form-horizontal" method="POST">
               <div class="box-body">
               <div class="form-group">
                   <label for="nameOperation" class="col-sm-2 control-label">Nom de l'opération</label>
@@ -207,11 +217,14 @@
                   <label for="criseOperation" class="col-sm-2 control-label">Crise</label>
                   <div class="col-sm-9">
                     <select class="form-control" id="criseOperation" name="criseOperation" required>
-                      <option>option 1</option>
-                      <option>option 2</option>
-                      <option>option 3</option>
-                      <option>option 4</option>
-                      <option>option 5</option>
+                        <?php
+                        $bdd = new PDO('mysql:host=localhost;dbname=rgdyprykza;charset=utf8', 'rgdyprykza', 'rRv2tVZK6P');
+                        $myquery = $bdd->prepare("Select ID_CRISE, NOM from crise;");
+                        $myquery->execute(array());
+                        while($row->fetch()){
+                            ?><option name="CriseID" value="<?php echo $row['ID_CRISE']; ?>"><?php echo $row['NOM']; ?></option>
+                        }
+                        ?>
                     </select>
                   </div>
                 </div>
