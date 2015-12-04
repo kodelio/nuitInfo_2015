@@ -1,5 +1,18 @@
 <?php
     session_start();
+
+    if(isset($_SESSION['TYPEUSER']) && $_SESSION['TYPEUSER'] == 3)
+    {
+        if(isset($_POST['nomCrise']) && $_POST['nomCrise']!='')
+        {
+            $nomCrise = str_replace("'", " ", $_POST['nomCrise']);
+            $descCrise = str_replace("'", " ", $_POST['descCrise']);
+            $descZoneCrise = str_replace("'", " ", $_POST['descZoneCrise']);
+
+            $bdd = new PDO('mysql:host=localhost;dbname=rgdyprykza;charset=utf8', 'rgdyprykza', 'rRv2tVZK6P');
+            $myquery = $bdd->prepare("INSERT INTO crise (NOM,DESCRIPTION,DATE_DEB,LOCALISATION_X,LOCALISATION_Y,DESC_ZONE) VALUES (?,?,?,?,?,?)");
+            $myquery->execute(array($nomCrise,$descCrise,$_POST['calandar'],$_POST['coordoneX'],$_POST['coordoneY'],$descZoneCrise));
+        }
 ?>
 
 <!DOCTYPE html>
@@ -178,7 +191,7 @@
           <!-- /.sidebar -->
         </aside>
 
-        <!-- =============================================== -->?>
+        <!-- =============================================== -->
          <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
           <!-- Content Header (Page header) -->
@@ -190,58 +203,80 @@
               <div class="col-md-12">
          <div class="box box-info">
                  <div class="box-header with-border">
-                   <h3 class="box-title">Assigner un employé à une opération</h3>
+                   <h3 class="box-title">Ajouter une crise</h3>
                  </div><!-- /.box-header -->
                  <!-- form start -->
-                  <form class="form-horizontal">
+                  <form class="form-horizontal" method="POST">
                       <div class="box-body">
                           <div class="form-group">
-                              <label for="inputEmail3" class="col-sm-2 control-label">Crise</label>
+                              <label for="nomCrise" class="col-sm-2 control-label">Crise</label>
                               <div class="col-sm-9">
                                   <div class="form-group">
-                                      <label class="col-sm-2 control-label" for="inputEmail3"></label>
+                                      <label class="col-sm-2 control-label" for="nomCrise"></label>
                                       <div class="col-sm-12">
-                                          <input id="inputEmail3" class="form-control">
+                                          <input id="nomCrise" name="nomCrise" class="form-control" required>
                                       </div>
                                   </div>
                               </div>
                           </div>
                           <div class="form-group">
-                              <label for="inputEmail3" class="col-sm-2 control-label">Description</label>
+                              <label for="coordoneX" class="col-sm-2 control-label">Coordonée x</label>
                               <div class="col-sm-9">
                                   <div class="form-group">
-                                      <label class="col-sm-2 control-label" for="inputEmail3"></label>
+                                      <label class="col-sm-2 control-label" for="coordoneX"></label>
                                       <div class="col-sm-12">
-                                          <input id="inputEmail3" class="form-control">
+                                          <input id="coordoneX" name="coordoneX" class="form-control" required>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label for="coordoneY" class="col-sm-2 control-label">Coordonée y</label>
+                              <div class="col-sm-9">
+                                  <div class="form-group">
+                                      <label class="col-sm-2 control-label" for="coordoneY"></label>
+                                      <div class="col-sm-12">
+                                          <input id="coordoneY" name="coordoneY" class="form-control" required>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label for="descCrise" class="col-sm-2 control-label">Description</label>
+                              <div class="col-sm-9">
+                                  <div class="form-group">
+                                      <label class="col-sm-2 control-label" for="descCrise"></label>
+                                      <div class="col-sm-12">
+                                          <textarea id="descCrise" name="descCrise" class="form-control" required></textarea>
                                       </div>
                                   </div>
                               </div>
                           </div> 
                           <div class="form-group">
-                              <label for="inputEmail3" class="col-sm-2 control-label">Description Zone</label>
+                              <label for="descZoneCrise" class="col-sm-2 control-label">Description Zone</label>
                               <div class="col-sm-9">
                                   <div class="form-group">
-                                      <label class="col-sm-2 control-label" for="inputEmail3"></label>
+                                      <label class="col-sm-2 control-label" for="descZoneCrise"></label>
                                       <div class="col-sm-12">
-                                          <input id="inputEmail3" class="form-control">
+                                          <textarea id="descZoneCrise" name="descZoneCrise" class="form-control" required></textarea>
                                       </div>
                                   </div>
                               </div>
                           </div>
                           <div class="form-group">
-                              <label for="inputEmail3" class="col-sm-2 control-label">Date Debut</label>
+                              <label for="calandar" class="col-sm-2 control-label">Date Debut</label>
                               <div class="col-sm-9">
                                    <div class="input-group">
                                       <div class="input-group-addon">
                                           <i class="fa fa-calendar"></i>
                                       </div>
-                                  <input class="form-control" type="text" data-mask="" data-inputmask="'alias': 'dd/mm/yyyy'">
+                                  <input class="form-control" type="text" data-mask="" id="calandar" name="calandar" data-inputmask="'alias': 'yyyy-mm-dd'" required>
                                   </div>
                               </div>
                           </div>
                       </div><!-- /.box-body -->
                       <div class="box-footer">
-                          <button type="submit" class="btn btn-info pull-right">Sign in</button>
+                          <button type="submit" class="btn btn-info pull-right">Valider</button>
                       </div><!-- /.box-footer -->
                   </form>
                </div>
