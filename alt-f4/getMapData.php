@@ -3,7 +3,7 @@
 $result = array();
 $i = 0;
 
-$bdd = new PDO('mysql:host=localhost;dbname=gestioncrise_alt_f4;charset=utf8', 'root', '');
+$bdd = new PDO('mysql:host=localhost;dbname=rgdyprykza;charset=utf8', 'rgdyprykza', 'rRv2tVZK6P');
 
 $myquery = $bdd->prepare("select LOCALISATION_X, LOCALISATION_Y, NOM, DESCRIPTION from crise");
 
