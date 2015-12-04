@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$bdd = new PDO('mysql:host=localhost;dbname=rgdyprykza;charset=utf8', 'root', '');
+$bdd = new PDO('mysql:host=localhost;dbname=rgdyprykza;charset=utf8', 'rgdyprykza', 'rRv2tVZK6P');
 $myquery = $bdd->prepare("SELECT O.NOM FROM operation O INNER JOIN asso_user_op A on A.ID_OPERATION=O.ID_OPERATION WHERE A.ID_USER=?;");
 $myquery->execute(array($_SESSION['IDUSER']));
 
@@ -172,16 +172,16 @@ if(isset($_SESSION['TYPEUSER']))
   <div class="box">
    <div class="box-header with-border">
      <h3 class="box-title">Mes opérations</h3>
-    <div class="box-body">
+     <div class="box-body">
       
-<?php
-  foreach ($operation as $value) {
-    echo $value."<br />";
-  }
-?>
+      <?php
+      foreach ($operation as $value) {
+        echo $value."<br />";
+      }
+      ?>
     </div>
-   </div><!-- /.box-footer-->
- </div><!-- /.box -->
+  </div><!-- /.box-footer-->
+</div><!-- /.box -->
 
 
 </section><!-- /.content -->
