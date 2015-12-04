@@ -185,27 +185,73 @@
 
     			<!-- Main content -->
     			<section class="content">
-
-
-
-
-
-
-    				<!-- Default box -->
-    				<div class="box">
-    					<div class="box-header with-border">
-                            <h3 class="box-title">Title</h3>
-                        </div><!-- /.box-footer-->
-                    </div><!-- /.box -->
-
-
-
-
-
-
-
-
-                </section><!-- /.content -->
+                    <div class="box box-default">
+                        <form role="form" method="POST">
+                            <div class="box-header">
+                                Connexion
+                            </div>
+                            <div class="box-body">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="Log" placeholder="Login ">
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control" name="PassWord" placeholder="Password">
+                                </div>
+                                <div class="box-footer">
+                                    <button type="submit" class="btn btn-default pull-right">Valider</button>
+                                </div>
+                            </div>
+                        </form>
+                        <?php 
+                        if ((isset($_POST['Log'])) AND ($_POST['Log']!="")){
+                            $bdd = new PDO('mysql:host=localhost;dbname=gestioncrise_alt_f4;charset=utf8', 'root', '');
+                            $myquery = $bdd->prepare("select TYPE_USER, ID_USER from user where login=? and password=?;");
+                            $myquery->execute(array($_POST['Log'],$_POST['PassWord']));
+                            $row = $myquery->fetch();
+                            if($row['TYPE_USER'] === false) {
+                                die( print_r(sqlsrv_errors(), true));
+                            }else{
+                                $_SESSION['TYPEUSER']=$row['TYPE_USER'];
+                                $_SESSION['IDUSER']=$row['ID_USER'];
+                                header("Maps.php");
+                            }
+                        }?>
+                    </div>
+                    <div class="box box-default">
+                        <form method="post" action="Connexion.php">
+                            <div class="box-header">
+                                Ajouter un utilisateur
+                            </div>
+                            <div class="box-body">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="NewLog" placeholder="Login ">
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control" name="NewPassword" placeholder="Password">
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control" name="Mail" placeholder="Mail">
+                                </div>
+                                <fieldset> 
+                                    <input type="radio" id="mc" name="type" value="1" checked><label for="mc"> Employé</label>
+                                    <input type="radio" id="vi" name="type" value="2"><label for="vi">Chef Employé</label>
+                                </fieldset>
+                            </div>
+                            <div class="box-footer">
+                                <button type="submit" class="btn btn-primary pull-right">Save changes</button>
+                            </div>
+                        </form>
+                    </div>
+                    <?php if ((isset($_POST['NewLog'])) AND ($_POST['NewLog']!="")){
+                            if ((isset($_POST['NewPassword'])) AND ($_POST['NewPassword']!="")){
+                                if ((isset($_POST['Mail'])) AND ($_POST['Mail']!="")){
+                                $bdd = new PDO('mysql:host=localhost;dbname=gestioncrise_alt_f4;charset=utf8', 'root', '');
+                                $myquery = $bdd->prepare("INSERT INTO utilisateur (TYPE_USER,LOGIN,PWD,MAIL) VALUES (?,?,?)");
+                                $myquery->execute(array($_POST['type'],$_POST['NewLog'],$_POST['NewPassword']),$_POST['Mail']);      
+                                }
+                            }
+                        }?>
+                </section>
             </div><!-- /.content-wrapper -->
             <footer class="main-footer">
                FOOTER
