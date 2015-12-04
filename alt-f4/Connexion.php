@@ -1,5 +1,20 @@
 <?php
     session_start();
+
+    if ((isset($_POST['Log'])) AND ($_POST['Log']!="")){
+        $bdd = new PDO('mysql:host=localhost;dbname=gestioncrise_alt_f4;charset=utf8', 'root', '');
+        $myquery = $bdd->prepare("select TYPE_USER, ID_USER from user where login=? and password=?;");
+        $myquery->execute(array($_POST['Log'],$_POST['PassWord']));
+        $row = $myquery->fetch();
+        if($row['TYPE_USER'] === false) {
+            die( print_r(sqlsrv_errors(), true));
+        }else{
+            $_SESSION['TYPEUSER']=$row['TYPE_USER'];
+            $_SESSION['IDUSER']=$row['ID_USER'];
+            header("Location: maps.php");
+            exit();
+        }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -202,20 +217,6 @@
                                 </div>
                             </div>
                         </form>
-                        <?php 
-                        if ((isset($_POST['Log'])) AND ($_POST['Log']!="")){
-                            $bdd = new PDO('mysql:host=localhost;dbname=gestioncrise_alt_f4;charset=utf8', 'root', '');
-                            $myquery = $bdd->prepare("select TYPE_USER, ID_USER from user where login=? and password=?;");
-                            $myquery->execute(array($_POST['Log'],$_POST['PassWord']));
-                            $row = $myquery->fetch();
-                            if($row['TYPE_USER'] === false) {
-                                die( print_r(sqlsrv_errors(), true));
-                            }else{
-                                $_SESSION['TYPEUSER']=$row['TYPE_USER'];
-                                $_SESSION['IDUSER']=$row['ID_USER'];
-                                header("Maps.php");
-                            }
-                        }?>
                     </div>
                     <div class="box box-default">
                         <form method="post" action="Connexion.php">
