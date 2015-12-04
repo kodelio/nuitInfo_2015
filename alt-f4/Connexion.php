@@ -3,7 +3,7 @@ session_start();
 
 if ((isset($_POST['Log'])) AND ($_POST['Log']!="")){
 	$bdd = new PDO('mysql:host=localhost;dbname=rgdyprykza;charset=utf8', 'rgdyprykza', 'rRv2tVZK6P');
-	$myquery = $bdd->prepare("select TYPE_USER, ID_USER from utilisateur where LOGIN=? and PWD=?;");
+	$myquery = $bdd->prepare("select TYPE_USER, ID_USER, LOGIN from utilisateur where LOGIN=? and PWD=?;");
 	$myquery->execute(array($_POST['Log'],$_POST['PassWord']));
 	$row = $myquery->fetch();
 	if($row['TYPE_USER'] === null) {
@@ -11,6 +11,7 @@ if ((isset($_POST['Log'])) AND ($_POST['Log']!="")){
 	}else{
 		$_SESSION['TYPEUSER']=$row['TYPE_USER'];
 		$_SESSION['IDUSER']=$row['ID_USER'];
+        $_SESSION['LOGINUSER']=$row['LOGIN'];
 		header("Location: index.php");
 		exit();
 	}

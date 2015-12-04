@@ -56,19 +56,19 @@ session_start();
             <!-- User Account: style can be found in dropdown.less -->
             <li class="dropdown user user-menu">
              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <span class="hidden-xs"><?php if (isset($_SESSION['IDUSER'])){ echo $_SESSION['IDUSER']; } else { echo "INVITE"; } ?></span>
+              <span class="hidden-xs"><?php if (isset($_SESSION['LOGINUSER'])){ echo $_SESSION['LOGINUSER']; } else { echo "INVITE"; } ?></span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
                <img src="dist/img/userlogo.jpg" class="img-circle" alt="User Image">
-               <p><?php if (isset($_SESSION['IDUSER'])){ echo $_SESSION['IDUSER']; } else { echo "INVITE"; } ?></p>
+               <p><?php if (isset($_SESSION['LOGINUSER'])){ echo $_SESSION['LOGINUSER']; } else { echo "INVITE"; } ?></p>
              </li>
 
              <!-- Menu Footer-->
              <li class="user-footer">
                <div class="pull-right">
-                <?php if (isset($_SESSION['IDUSER'])){ echo "<a href=\"deconnexion.php\" class=\"btn btn-default btn-flat\">Déconnexion</a>"; } ?>
+                <?php if (isset($_SESSION['LOGINUSER'])){ echo "<a href=\"deconnexion.php\" class=\"btn btn-default btn-flat\">Déconnexion</a>"; } ?>
               </div>
             </li>
           </ul>
@@ -90,7 +90,7 @@ session_start();
     <img src="dist/img/userlogo.jpg" class="img-circle" alt="User Image">
   </div>
   <div class="pull-left info">
-    <p><?php if (isset($_SESSION['IDUSER'])){ echo $_SESSION['IDUSER']; } else { echo "INVITE"; } ?></p>
+    <p><?php if (isset($_SESSION['LOGINUSER'])){ echo $_SESSION['LOGINUSER']; } else { echo "INVITE"; } ?></p>
   </div>
 </div>
 <!-- sidebar menu: : style can be found in sidebar.less -->
