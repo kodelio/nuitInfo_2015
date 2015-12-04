@@ -229,9 +229,6 @@ if(isset($_SESSION['TYPEUSER']) && $_SESSION['TYPEUSER'] == 2)
                           ?>
                         </select>
                       </div>
-                      <?php echo $_POST['nameOperation'];
-                      echo $_POST['CriseID'];
-                      echo $_SESSION['IDUSER'];?>
                     </div>
                   </div><!-- /.box-body -->
                   <div class="box-footer">
