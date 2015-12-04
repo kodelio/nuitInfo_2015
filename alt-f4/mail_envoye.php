@@ -162,14 +162,15 @@
                 <!-- Main content -->
                 <section class="content">
                     <h1>Le mail a bien été envoyé !</h1>
-                </section><!-- /.content -->
-            </div><!-- /.content-wrapper -->
+                    <META http-equiv="refresh" content="3; URL=contact.php">
+                    </section><!-- /.content -->
+                </div><!-- /.content-wrapper -->
 
 
 
-            <footer class="main-footer">
-             FOOTER
-         </footer>
+                <footer class="main-footer">
+                 FOOTER
+             </footer>
             <!-- Add the sidebar's background. This div must be placed
             immediately after the control sidebar -->
             <div class="control-sidebar-bg"></div>
