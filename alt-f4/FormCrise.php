@@ -1,34 +1,35 @@
 <?php
 session_start();
 
- if(isset($_SESSION['TYPEUSER']) && $_SESSION['TYPEUSER'] == 3)
-    {
-        if(isset($_POST['nomCrise']) && $_POST['nomCrise']!='')
-        {
-            $nomCrise = str_replace("'", " ", $_POST['nomCrise']);
-            $descCrise = str_replace("'", " ", $_POST['descCrise']);
-            $descZoneCrise = str_replace("'", " ", $_POST['descZoneCrise']);
+if(isset($_SESSION['TYPEUSER']) && $_SESSION['TYPEUSER'] == 3)
+{
+  if(isset($_POST['nomCrise']) && $_POST['nomCrise']!='')
+  {
+    $nomCrise = str_replace("'", " ", $_POST['nomCrise']);
+    $descCrise = str_replace("'", " ", $_POST['descCrise']);
+    $descZoneCrise = str_replace("'", " ", $_POST['descZoneCrise']);
 
-            $bdd = new PDO('mysql:host=localhost;dbname=rgdyprykza;charset=utf8', 'rgdyprykza', 'rRv2tVZK6P');
-            $myquery = $bdd->prepare("INSERT INTO crise (NOM,DESCRIPTION,DATE_DEB,LOCALISATION_X,LOCALISATION_Y,DESC_ZONE) VALUES (?,?,?,?,?,?)");
-            $myquery->execute(array($nomCrise,$descCrise,$_POST['calandar'],$_POST['coordoneX'],$_POST['coordoneY'],$descZoneCrise));
-        }
-?>
+    $bdd = new PDO('mysql:host=localhost;dbname=rgdyprykza;charset=utf8', 'rgdyprykza', 'rRv2tVZK6P');
+    $myquery = $bdd->prepare("INSERT INTO crise (NOM,DESCRIPTION,DATE_DEB,LOCALISATION_X,LOCALISATION_Y,DESC_ZONE) VALUES (?,?,?,?,?,?)");
+    $myquery->execute(array($nomCrise,$descCrise,$_POST['calandar'],$_POST['coordoneX'],$_POST['coordoneY'],$descZoneCrise));
+  }
+  ?>
 
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Alt-F4 | TITRE</title>
-  <!-- Bootstrap 3.3.5 -->
-  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-  <!-- Ionicons -->
-  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-  <!-- Theme style -->
-  <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+  <!DOCTYPE html>
+  <html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Alt-F4 | Formulaire de crise</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.5 -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
     <!-- AdminLTE Skins. Choose a skin from the css/skins
     folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
@@ -161,98 +162,98 @@ if(isset($_SESSION['TYPEUSER']))
 
 <!-- =============================================== -->
 
- <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper">
-          <!-- Content Header (Page header) -->
-          <section class="content-header">
-          </section>
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <section class="content-header">
+  </section>
 
-          <!-- Main content -->
-          <section class="content">
-              <div class="col-md-12">
-         <div class="box box-info">
-                 <div class="box-header with-border">
-                   <h3 class="box-title">Ajouter une crise</h3>
-                 </div><!-- /.box-header -->
-                 <!-- form start -->
-                  <form class="form-horizontal" method="POST">
-                      <div class="box-body">
-                          <div class="form-group">
-                              <label for="nomCrise" class="col-sm-2 control-label">Crise</label>
-                              <div class="col-sm-9">
-                                  <div class="form-group">
-                                      <label class="col-sm-2 control-label" for="nomCrise"></label>
-                                      <div class="col-sm-12">
-                                          <input id="nomCrise" name="nomCrise" class="form-control" required>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="form-group">
-                              <label for="coordoneX" class="col-sm-2 control-label">Coordonée x</label>
-                              <div class="col-sm-9">
-                                  <div class="form-group">
-                                      <label class="col-sm-2 control-label" for="coordoneX"></label>
-                                      <div class="col-sm-12">
-                                          <input id="coordoneX" name="coordoneX" class="form-control" required>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="form-group">
-                              <label for="coordoneY" class="col-sm-2 control-label">Coordonée y</label>
-                              <div class="col-sm-9">
-                                  <div class="form-group">
-                                      <label class="col-sm-2 control-label" for="coordoneY"></label>
-                                      <div class="col-sm-12">
-                                          <input id="coordoneY" name="coordoneY" class="form-control" required>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="form-group">
-                              <label for="descCrise" class="col-sm-2 control-label">Description</label>
-                              <div class="col-sm-9">
-                                  <div class="form-group">
-                                      <label class="col-sm-2 control-label" for="descCrise"></label>
-                                      <div class="col-sm-12">
-                                          <textarea id="descCrise" name="descCrise" class="form-control" required></textarea>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div> 
-                          <div class="form-group">
-                              <label for="descZoneCrise" class="col-sm-2 control-label">Description Zone</label>
-                              <div class="col-sm-9">
-                                  <div class="form-group">
-                                      <label class="col-sm-2 control-label" for="descZoneCrise"></label>
-                                      <div class="col-sm-12">
-                                          <textarea id="descZoneCrise" name="descZoneCrise" class="form-control" required></textarea>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="form-group">
-                              <label for="calandar" class="col-sm-2 control-label">Date Debut</label>
-                              <div class="col-sm-9">
-                                   <div class="input-group">
-                                      <div class="input-group-addon">
-                                          <i class="fa fa-calendar"></i>
-                                      </div>
-                                  <input class="form-control" type="text" data-mask="" id="calandar" name="calandar" data-inputmask="'alias': 'yyyy-mm-dd'" required>
-                                  </div>
-                              </div>
-                          </div>
-                      </div><!-- /.box-body -->
-                      <div class="box-footer">
-                          <button type="submit" class="btn btn-info pull-right">Valider</button>
-                      </div><!-- /.box-footer -->
-                  </form>
-               </div>
-           </div>
+  <!-- Main content -->
+  <section class="content">
+    <div class="col-md-12">
+     <div class="box box-info">
+       <div class="box-header with-border">
+         <h3 class="box-title">Ajouter une crise</h3>
+       </div><!-- /.box-header -->
+       <!-- form start -->
+       <form class="form-horizontal" method="POST">
+        <div class="box-body">
+          <div class="form-group">
+            <label for="nomCrise" class="col-sm-2 control-label">Crise</label>
+            <div class="col-sm-9">
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="nomCrise"></label>
+                <div class="col-sm-12">
+                  <input id="nomCrise" name="nomCrise" class="form-control" required>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="coordoneX" class="col-sm-2 control-label">Coordonée x</label>
+            <div class="col-sm-9">
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="coordoneX"></label>
+                <div class="col-sm-12">
+                  <input id="coordoneX" name="coordoneX" class="form-control" required>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="coordoneY" class="col-sm-2 control-label">Coordonée y</label>
+            <div class="col-sm-9">
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="coordoneY"></label>
+                <div class="col-sm-12">
+                  <input id="coordoneY" name="coordoneY" class="form-control" required>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="descCrise" class="col-sm-2 control-label">Description</label>
+            <div class="col-sm-9">
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="descCrise"></label>
+                <div class="col-sm-12">
+                  <textarea id="descCrise" name="descCrise" class="form-control" required></textarea>
+                </div>
+              </div>
+            </div>
+          </div> 
+          <div class="form-group">
+            <label for="descZoneCrise" class="col-sm-2 control-label">Description Zone</label>
+            <div class="col-sm-9">
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="descZoneCrise"></label>
+                <div class="col-sm-12">
+                  <textarea id="descZoneCrise" name="descZoneCrise" class="form-control" required></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="calandar" class="col-sm-2 control-label">Date Debut</label>
+            <div class="col-sm-9">
+             <div class="input-group">
+              <div class="input-group-addon">
+                <i class="fa fa-calendar"></i>
+              </div>
+              <input class="form-control" type="text" data-mask="" id="calandar" name="calandar" data-inputmask="'alias': 'yyyy-mm-dd'" required>
+            </div>
+          </div>
+        </div>
+      </div><!-- /.box-body -->
+      <div class="box-footer">
+        <button type="submit" class="btn btn-info pull-right">Valider</button>
+      </div><!-- /.box-footer -->
+    </form>
+  </div>
+</div>
 
-        </section><!-- /.content -->
-      </div><!-- /.content-wrapper -->
+</section><!-- /.content -->
+</div><!-- /.content-wrapper -->
 <footer class="main-footer">
  Copyright © 2015 - <strong>Alt-F4 Team</strong> - Nuit de l'Info 2015
 </footer>
